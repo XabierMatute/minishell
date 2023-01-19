@@ -6,14 +6,15 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/19 15:34:09 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/01/19 16:16:26 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := minishell
 
 SRC :=	main.c  \
-		closed.c	\
+		/contain.c	\
+		Utils/closed.c	\
 
 		
 OBJ := $(SRC:%.c=%.o)
