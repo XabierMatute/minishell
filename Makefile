@@ -6,16 +6,13 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/17 18:12:26 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/01/17 18:46:45 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := so_long
 
 SRC :=	main.c  \
-		prueba.c	\
-		f.c	\
-		.c	\
 		Errors/error_argc.c         \
 		Errors/error_dotber.c      	\
 		Errors/error_unreadable.c  	\
