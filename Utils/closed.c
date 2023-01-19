@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:36:31 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/19 15:47:21 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:54:49 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ../minishell.h
+#include "../minishell.h"
 
 int closed(char *s, char c)
 {
@@ -25,5 +25,5 @@ int closed(char *s, char c)
 		}
 		s++;
 	}
-	return (i % 2);
+	return (!(i % 2));
 }
