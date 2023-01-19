@@ -6,36 +6,15 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/17 18:46:45 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/01/19 15:34:09 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := so_long
+NAME := minishell
 
 SRC :=	main.c  \
-		Errors/error_argc.c         \
-		Errors/error_dotber.c      	\
-		Errors/error_unreadable.c  	\
-		Errors/error_invalidchar.c 	\
-		Errors/error_charnum.c     	\
-		Errors/error_rectangle.c   	\
-		Errors/error_closed.c		\
-		Errors/error_path.c			\
-		Parse/argvparse.c \
-		Parse/mapparse.c  \
-		Parse/map/invalidchar.c \
-		Parse/map/charnum.c     \
-		Parse/map/rectangle.c   \
-		Parse/map/closed.c      \
-		Parse/map/path.c		\
-		utils/getmap.c  \
-		utils/linelen.c \
-		utils/p.c		\
-		utils/showmap.c \
-		utils/move.c	\
-		utils/mapend.c	\
-		utils/gameover.c \
-		Parse/parseline.c \
+		closed.c	\
+
 		
 OBJ := $(SRC:%.c=%.o)
 

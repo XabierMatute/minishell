@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   closed.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xmatute- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 19:25:59 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/19 15:31:52 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/01/19 15:36:31 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/01/19 15:36:31 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include ../minishell.h
 
-int closed(char *s, char c);
-#endif
+int closed(char *s, char c)
+{
+	
+}
