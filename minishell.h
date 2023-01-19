@@ -15,4 +15,5 @@
 
 int closed(char *s, char c);
 int contain(char *s, char c);
+int contain(char *s, char c);
 #endif
