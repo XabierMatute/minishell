@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:34:42 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/19 16:39:21 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:31:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int contain(char *s, char c)
 {
 	while (*s)
 	{
+		s = ignoreq(s);
 		if (*s == c)
 		{
 			return(1);
