@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:36:31 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/19 15:54:49 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:56:56 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ int closed(char *s, char c)
 	i = 0;
 	while (*s)
 	{
-		if (*s == c)
+		s = ignore(s, c);
+		if (*s == 0)
 		{
-			i++;
+			return(0);
 		}
+		s = ignoreq(s);
 		s++;
 	}
-	return (!(i % 2));
+	return (1);
 }
