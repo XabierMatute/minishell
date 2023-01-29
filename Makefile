@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/28 18:45:39 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/01/29 16:52:11 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC :=	main.c  \
 		Parse/validsintax.c \
 		Utils/contain.c	\
 		Utils/closed.c	\
+		Utils/ft_split.c \
 
 		
 OBJ := $(SRC:%.c=%.o)
