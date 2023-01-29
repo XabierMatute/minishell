@@ -6,25 +6,24 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:36:31 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/27 15:56:56 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/29 16:37:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int closed(char *s, char c)
+int closedq(char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (*s)
 	{
-		s = ignore(s, c);
+		s = ignoreq(s);
 		if (*s == 0)
 		{
 			return(0);
 		}
-		s = ignoreq(s);
 		s++;
 	}
 	return (1);
