@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:25:59 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 18:25:54 by jperez           ###   ########.fr       */
+/*   Updated: 2023/01/29 19:22:56 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ char	**ft_split(char const *s, char c);
 void	ft_cd(char *path);
 void	ft_pwd();
 void	ft_echo(char **args);
+void	ft_export(char **env, char *variant);
 
 #endif
