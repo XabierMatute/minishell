@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/19 18:23:48 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/01/28 18:45:39 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,13 @@ OBJ := $(SRC:%.c=%.o)
 
 SANI 	:= -fsanitize=address -g3
 
+RLFLAGS := -lreadline -L /Users/xmatute-/.brew/opt/readline/lib -I /Users/xmatute-/.brew/opt/readline/include
+
 CC 		:= gcc
-# CFLAGS 	:= -Wall  -Wextra -Werror $(SANI)
-# CFLAGS 	:= -Wall -Werror -Wextra $(SANI)
+CFLAGS 	:= -Wall  -Wextra  $(SANI) $(RLFLAGS)
+
+# CFLAGS 	:= -Wall -Werror -Wextra $(SANI) $(RLFLAGS)
+
 
 RM 		:= rm -rf
 
