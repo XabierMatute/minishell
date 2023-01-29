@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:51:11 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 17:01:52 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:02:13 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ static unsigned int	palabras(char const *s, char c)
 	unsigned int	p;
 
 	p = 0;
-	while (*(s++))
-		if ((*s == 0 || *s == c) && *(s - 1) != c)
+	while (*(s))
+	{
+		s = ignoreq(s);
+		if ((s[1] == 0 || s[1] == c) && s[0] != c)
 			p++;
+		s++;
+	}
 	return (p);
 }
 
