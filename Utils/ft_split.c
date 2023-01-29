@@ -1,18 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   **ft_split.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xmatute- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:51:11 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 16:51:11 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/29 17:01:52 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ../minishell.h
+#include "../minishell.h"
+
+static unsigned int	palabras(char const *s, char c)
+{
+	unsigned int	p;
+
+	p = 0;
+	while (*(s++))
+		if ((*s == 0 || *s == c) && *(s - 1) != c)
+			p++;
+	return (p);
+}
 
 char	**ft_split(char const *s, char c)
 {
-	
+	char			**sl;
+	unsigned int	i;
+	unsigned int	p;
+
+	sl = malloc(sizeof(char *) * (palabras(s, c) + 1));
+	if (!sl)
+		return (0);
+	i = 0;
+	p = 0;
+	while (s[i] == c && s[i])
+		i++;
+	while (s[i])
+	{
+		sl[p] = ft_substr(s, i, ft_wlen(s + i, c));
+		if (!sl[p])
+			return (liberatesl(&sl, p));
+		p++;
+		i = i + ft_wlen(s + i, c);
+		while (s[i] == c && s[i])
+			i++;
+	}
+	sl[p] = 0;
+	return (sl);
 }
