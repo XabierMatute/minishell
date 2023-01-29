@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/29 16:57:26 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/01/29 17:13:04 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC :=	main.c  \
 		Utils/closed.c	\
 		Utils/ft_split.c \
 		Utils/ft_wlen.c \
+		Utils/liberatesl.c \
 
 		
 OBJ := $(SRC:%.c=%.o)
@@ -41,14 +42,17 @@ val 	:=  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 all : $(NAME)
 
 $(NAME) : $(OBJ)
+	make -C libft
 	make -C ft_printf
-	$(CC) $(CFLAGS) $(OBJ) ft_printf/libftprintf.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) ft_printf/libftprintf.a libft/libft.a -o $(NAME)
 
 clean :
 		$(RM) $(OBJ)
+		make clean -C libft
 		make clean -C ft_printf
 
 fclean : clean
+		make fclean -C libft
 		make fclean -C ft_printf
 		$(RM) $(NAME)
 
