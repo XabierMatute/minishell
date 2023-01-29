@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:56:29 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 16:57:45 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/29 17:01:39 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ../minishell.h
+#include "../minishell.h"
 
 size_t	ft_wlen(const char *s, char c)
 {
