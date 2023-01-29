@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:47:03 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 18:08:51 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:58:56 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@
 
 int main()
 {
-	int		i;
-	int		j;
 	char	*str;
-	char	**cl;
-	char	**wl;
 
 	str = NULL;
 	while(1)
@@ -46,21 +42,21 @@ int main()
 		str = readline("👉");
 		add_history(str);
 		if (validsintax(str))
+		{
 			printf("\"%s\" es una sintaxis valida\n", str);
+			pipes(ft_split(str, '|'));//si split da NULL-> ERROR
+		}
 		else
 			printf("\"%s\" no es una sintaxis valida\n", str);
-		cl = ft_split(str, '|');
-		i = 0;
-		while (cl[i])
-		{
-			// wl = ft_split(cl[i], ' ');
-			ft_printf("%s\n|\n", cl[i]);
-			i++;
-		}
-		printf("%s\n", cl[i]);
-
-		
 		free(str);
 	}
     return 0;
 }
+
+/*
+** Gestionar ctrl-C ctrl-D ctrl-\, que deberán funcionar como en bash.
+** •Cuando sea interactivo:
+** ◦ctrl-C imprime una nueva entrada en una línea nueva.
+** ◦ctrl-D termina el shell.
+** ◦ctrl-\ no hace nada.
+*/
