@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/29 17:24:50 by jperez           ###   ########.fr        #
+#    Updated: 2023/01/29 19:28:12 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ SRC :=	main.c				\
 		Utils/ft_split.c	\
 		Utils/ft_wlen.c		\
 		Utils/liberatesl.c	\
-
-		built-ins/ft_pwd.c	\
-		built-ins/ft_cd.c	\
+		Pipes/pipes.c \
+		# built-ins/ft_pwd.c	\
+		# built-ins/ft_cd.c	\
 
 		
 OBJ := $(SRC:%.c=%.o)

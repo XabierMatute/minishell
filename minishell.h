@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:25:59 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 17:11:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:27:51 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char 	*ignoreq(char *s);
 char	**liberatesl(char ***f, unsigned int p);
 size_t	ft_wlen(const char *s, char c);
 char	**ft_split(char const *s, char c);
+void 	pipes(char **comands);
 
 #endif
