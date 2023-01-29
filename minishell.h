@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:25:59 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 17:11:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:25:54 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+#include <unistd.h>
 #include <curses.h>
 #include <ncurses.h>
 #include <readline/readline.h>
 #include <readline/history.h>
 
 # include "./libft/libft.h"
-
 
 // #include "readline/readline.h"
 // #include "readline/history.h"
@@ -36,5 +37,10 @@ char 	*ignoreq(char *s);
 char	**liberatesl(char ***f, unsigned int p);
 size_t	ft_wlen(const char *s, char c);
 char	**ft_split(char const *s, char c);
+
+/* ------------------- BUILT_INS ---------------------*/
+void	ft_cd(char *path);
+void	ft_pwd();
+void	ft_echo(char **args);
 
 #endif
