@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pwd.c                                           :+:      :+:    :+:   */
+/*   ft_export.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 16:15:35 by jperez            #+#    #+#             */
-/*   Updated: 2023/01/29 17:39:54 by jperez           ###   ########.fr       */
+/*   Created: 2023/01/29 19:09:40 by jperez            #+#    #+#             */
+/*   Updated: 2023/01/29 19:30:00 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../minishell.h"
+#include "../minishell.h"
 
-void	ft_pwd()
+void	ft_export(char **env, char *variant)
 {
-	char	buff[PATH_MAX];
+	int	i;
 
-	getcwd(buff, PATH_MAX);
-	ft_printf("%s\n", buff);
+	i = 0;
+	while (env[i])
+		i++;
+	env[i++] = variant;
+	env[i] = NULL;
 }
