@@ -6,26 +6,26 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/30 18:48:59 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/01/30 18:50:17 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := minishell
 
-SRC :=	main.c				\
-		Utils/ignoreq.c		\
-		Parse/validsintax.c	\
-		Utils/contain.c		\
-		Utils/closed.c		\
-		Utils/ft_split.c	\
-		Utils/ft_wlen.c		\
-		Utils/liberatesl.c	\
+SRC :=	main.c					\
+		Utils/ignoreq.c			\
+		Parse/validsintax.c		\
+		Utils/contain.c			\
+		Utils/closed.c			\
+		Utils/ft_split.c		\
+		Utils/ft_wlen.c			\
+		Utils/liberatesl.c		\
+		built-ins/ft_pwd.c		\
+		built-ins/ft_cd.c		\
+		built-ins/ft_echo.c	\
+		built-ins/ft_export.c	\
+		built-ins/ft_unset.c	\
 		Pipes/pipes.c \
-		built-ins/ft_pwd.c	\
-		built-ins/ft_cd.c	\
-		built-ins/ft_pwd.c	\
-		built-ins/ft_cd.c	\
-
 		
 OBJ := $(SRC:%.c=%.o)
 
