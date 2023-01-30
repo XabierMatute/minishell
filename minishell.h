@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 19:25:59 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/30 17:56:17 by jperez           ###   ########.fr       */
+/*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
+/*   Updated: 2023/01/30 18:47:03 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ void	ft_cd(char *path);
 void	ft_pwd();
 void	ft_echo(char **args);
 void	ft_export(char **env, char **variables);
+void 	pipes(char **comands);
 
 #endif

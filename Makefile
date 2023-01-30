@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
+#    By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/01/29 19:36:28 by jperez           ###   ########.fr        #
+#    Created: 2023/01/30 18:46:30 by jperez            #+#    #+#              #
+#    Updated: 2023/01/30 18:46:33 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC :=	main.c					\
 		built-ins/ft_echo.c	\
 		built-ins/ft_export.c	\
 		built-ins/ft_unset.c	\
-
+		Pipes/pipes.c \
 		
 OBJ := $(SRC:%.c=%.o)
 

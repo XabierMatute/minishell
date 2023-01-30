@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:28:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 16:39:09 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:57:55 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,23 @@ int validsintax(char *s)
 {
 	return (checkclosed(s) &&
 			checkcontain(s, 92) &&
+			checkcontain(s, '(') &&
+			checkcontain(s, ')') &&
+			checkcontain(s, '*') &&
 			checkcontain(s, ';'));
 }
+
+
+/*
+** no entender || y && y que haya varios ||| contrabarras en cualquier sitio
+*/
+
 
 /*
 ** 39  '
 ** 92  \
+*/
+
+/*
+** expandir las variables y eliminr las comillas lo que sea que es $?
 */
