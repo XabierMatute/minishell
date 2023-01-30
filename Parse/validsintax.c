@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:28:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 18:57:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/01/30 18:43:44 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int validsintax(char *s)
 
 
 /*
-** no entender || y && y que haya varios ||| contrabarras en cualquier sitio
+** no entender || y && y que haya varios ||| contrabarras en cualquier sitio | al principio
 */
 
 
