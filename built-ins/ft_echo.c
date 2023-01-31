@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:55:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/01/29 18:31:50 by jperez           ###   ########.fr       */
+/*   Updated: 2023/01/31 19:51:44 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_print_n_args(char **args)
 void	ft_echo(char **args)
 {
 	if (!ft_strncmp(*args, "-n", 2))
-		ft_print_args(++args);
+		ft_print_args(args);
 	else
 		ft_print_n_args(args);
 }
