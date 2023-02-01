@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
 /*   Updated: 2023/02/01 19:23:24 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/01 18:34:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +48,8 @@ char 	*ignoreq(char *s);
 char	**liberatesl(char ***f, unsigned int p);
 size_t	ft_wlen(const char *s, char c);
 char	**ft_split(char const *s, char c);
+int		checknoin(char *s);
+int		checkpipes(char *s);
 
 /* ------------------- BUILT_INS ---------------------*/
 void	ft_cd(char **args);
