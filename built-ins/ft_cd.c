@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/01/31 19:44:58 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/01 19:25:05 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_check_access(char *path)
 {
 	if (access(path, F_OK | R_OK))
 	{
-		ft_printf("%s: ", path);
+		ft_printf("❌ %s: ", path);
 		perror("");
 		return (1);
 	}
@@ -30,7 +30,7 @@ int		ft_check_cd_args(char **args)
 	lenght =ft_args_lenght(args);
 	if (lenght > 1)
 	{
-		ft_printf("cd: string not in pwd %s", args[0]);
+		ft_printf("❌ cd: string not in pwd %s", args[0]);
 		return (1);
 	}
 	else if (lenght == 0)
