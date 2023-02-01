@@ -1,36 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validsintax.c                                      :+:      :+:    :+:   */
+/*   pipesparse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 14:28:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/01 19:24:40 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/01/30 19:00:52 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/01/31 19:26:31 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-
-
-int validsintax(char *s)
-{
-	return (checknoin(s) &&
-			checkpipes(s));
-}
-
-
-/*
-** no entender || y && y que haya varios ||| contrabarras en cualquier sitio | al principio
-*/
-
-
-/*
-** 39  '
-** 92  \
-*/
-
-/*
-** expandir las variables y eliminr las comillas lo que sea que es $?
-*/

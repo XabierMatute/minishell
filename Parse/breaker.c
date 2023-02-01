@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validsintax.c                                      :+:      :+:    :+:   */
+/*   breaker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 14:28:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/01 19:24:40 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/01/31 17:41:48 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/01/31 17:44:22 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-
-
-int validsintax(char *s)
+static unsigned int	palabras(char const *s, char c)
 {
-	return (checknoin(s) &&
-			checkpipes(s));
+	unsigned int	p;
+
+	p = 0;
+	while (*(s))
+	{
+		s = ignoreq(s);
+		if ((s[1] == 0 || s[1] == c) && s[0] != c)
+			p++;
+		if ((s[1] == 0 || s[1] == c) && s[0] != c)
+			p++;
+		s++;
+	}
+	return (p);
 }
 
-
-/*
-** no entender || y && y que haya varios ||| contrabarras en cualquier sitio | al principio
-*/
-
-
-/*
-** 39  '
-** 92  \
-*/
-
-/*
-** expandir las variables y eliminr las comillas lo que sea que es $?
-*/
+char	**breaker(char *s)
+{
+	
+}

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:47:03 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 18:58:56 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/01 19:23:39 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ int main()
 	str = NULL;
 	while(1)
 	{
-		str = readline("👉");
+		str = readline("🐚👉");
 		add_history(str);
 		if (validsintax(str))
 		{
 			printf("\"%s\" es una sintaxis valida\n", str);
-			pipes(ft_split(str, '|'));//si split da NULL-> ERROR
+			// pipes(ft_split(str, '|'));//si split da NULL-> ERROR
 		}
 		else
 			printf("\"%s\" no es una sintaxis valida\n", str);
