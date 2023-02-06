@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:47:03 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/01 19:23:39 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:49:03 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,33 @@
 // }
 
 
-int main()
+int main(int argc, char **argv, char **env)
 {
 	char	*str;
+	t_stack	*cp_env;
 
 	str = NULL;
+	cp_env = NULL;
+	ft_add_listener();
 	while(1)
 	{
-		str = readline("🐚👉");
-		add_history(str);
-		if (validsintax(str))
+		str = readline("🐚👉 ");
+		if (str == NULL)
+			exit(-1);
+		if (*str != '\0')
 		{
-			printf("\"%s\" es una sintaxis valida\n", str);
-			// pipes(ft_split(str, '|'));//si split da NULL-> ERROR
-		}
-		else
-			printf("\"%s\" no es una sintaxis valida\n", str);
-		free(str);
+			if (!strncmp(str, "exit", 4))
+				exit(-1);
+			add_history(str);
+			if (validsintax(str))
+			{
+				printf("\"%s\" es una sintaxis valida\n", str);
+				// pipes(ft_split(str, '|'));//si split da NULL-> ERROR
+			}
+			else
+				printf("\"%s\" no es una sintaxis valida\n", str);
+			free(str);
+			}
 	}
     return 0;
 }

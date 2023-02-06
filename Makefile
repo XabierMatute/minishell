@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/01 19:14:32 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/05 20:18:09 by jperez           ###   ########.fr        #
 #    Updated: 2023/02/01 18:38:30 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -35,12 +35,14 @@ SRC :=	main.c					\
 		built-ins/ft_manage_stack.c	\
 		built-ins/ft_copy_env.c	\
 		built-ins/ft_exit.c	\
+		signals/ft_signals.c		\
+		Pipes/ft_find_cmd.c			\
 		
 OBJ := $(SRC:%.c=%.o)
 
-SANI 	:= -fsanitize=address -g3
+#SANI 	:= -fsanitize=address -g3
 
-RLFLAGS := -lreadline -L /Users/xmatute-/.brew/opt/readline/lib -I /Users/xmatute-/.brew/opt/readline/include
+RLFLAGS := -lreadline -L /Users/$(USER)/.brew/opt/readline/lib -I /Users/$(USER)/.brew/opt/readline/include
 
 CC 		:= gcc
 CFLAGS 	:= -Wall  -Wextra  $(SANI) $(RLFLAGS)
