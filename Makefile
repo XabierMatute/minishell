@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/07 17:28:39 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/07 20:16:09 by jperez           ###   ########.fr        #
 #    Updated: 2023/02/01 18:38:30 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -39,6 +39,7 @@ SRC :=	main.c					\
 		Pipes/ft_find_cmd.c			\
 		Pipes/ft_create_pipes.c			\
 		Utils/ft_getenv.c			\
+		Pipes/ft_family_process.c		\
 		
 OBJ := $(SRC:%.c=%.o)
 

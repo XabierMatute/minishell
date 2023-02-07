@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:07:35 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/07 15:26:19 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/07 20:16:47 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_pipe(int *fds)
 int	**ft_create_pipes(int pipes_num)
 {
 	int		i;
-	char	**pipes;
+	int		**pipes;
 	
 	pipes = (int **)malloc(sizeof(int *) * (pipes_num + 1));
 	if (!pipes)
