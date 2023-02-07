@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 19:20:23 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/06 18:50:47 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/07 19:40:11 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ int	ft_siagction(int signal, type_sa *sa)
 
 void ft_manage_signals(int signum)
 {
-	printf("Enviada la señal %d\n", signum);
 	if (signum == SIGQUIT)
-		printf("HOA\n");
+		rl_redisplay();
 	/*
 	if (signum == EOF)
 	{
@@ -37,7 +36,8 @@ void ft_manage_signals(int signum)
 	if (signum == SIGINT)
 	{
 		rl_on_new_line();
-		rl_replace_line("", 0);
+		write(1, "\n", 1);
+		rl_replace_line("", 1);
    		rl_redisplay();
 	}
 }
