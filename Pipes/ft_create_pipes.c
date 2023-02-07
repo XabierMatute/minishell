@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:07:35 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/06 19:20:12 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/07 15:26:19 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	**ft_create_pipes(int pipes_num)
 	int		i;
 	char	**pipes;
 	
-	pipes = (int **)malloc(sizeof(int *) * pipes_num);
+	pipes = (int **)malloc(sizeof(int *) * (pipes_num + 1));
 	if (!pipes)
 		return (NULL);
 	i = -1;
@@ -39,6 +39,6 @@ int	**ft_create_pipes(int pipes_num)
 		if (ft_pipe(pipes[i]))
 			return (NULL);
 	}
-	printf("HOLA\n");
+	pipes[i] = NULL;
 	return (pipes);
 }
