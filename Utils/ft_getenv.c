@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_env.c                                    :+:      :+:    :+:   */
+/*   ft_getenv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 17:23:49 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/07 17:32:27 by jperez           ###   ########.fr       */
+/*   Created: 2023/02/07 17:24:19 by jperez            #+#    #+#             */
+/*   Updated: 2023/02/07 18:45:12 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-t_stack	*ft_create_env(char **env)
+char	*ft_advance_to_equal(char *variable)
 {
-	int		i;
-
-	G_cp_env = (t_stack *)malloc(sizeof(t_stack));
-	if (!env)
+	if (!*variable)
 		return (NULL);
-	i = -1;
-	while (env[++i])
-		ft_push(G_cp_env, ft_strdup(env[i]));
-	return (G_cp_env);
+	while (*variable != '=')
+		variable++;
+	return (++variable);
+}
+
+char *ft_getenv(char *variable)
+{
+	t_node	*ptr;
+
+	if (G_cp_env->peek)
+	{
+		ptr = G_cp_env->peek;
+		while (ptr)
+		{
+			if (!ft_strncmp(ptr->variable, variable, ft_strlen(variable)))
+				return (ft_advance_to_equal(ptr->variable));
+			ptr = ptr->next;
+		}
+	}
+	return (NULL);
 }
