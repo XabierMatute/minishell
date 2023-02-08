@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/08 17:20:46 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:26:58 by jperez           ###   ########.fr       */
 /*   Updated: 2023/02/01 18:34:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -83,6 +83,8 @@ int ft_add_listener();
 char *ft_find_cmd(char *cmd);
 int	**ft_create_pipes(int pipes_num);
 int	ft_family_process(int **pipes, char **comands, int i);
+int	ft_dup2_fds(int read_fd, int write_fd);
+int	ft_close_pipes(int **pipes, int read_fd, int write_fd);
 
 /* ------------------- MANAGE-ENV-NODES ---------------------*/
 char *ft_getenv(char *path);

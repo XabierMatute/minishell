@@ -6,37 +6,13 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/08 17:21:07 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:26:35 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	ft_redirect_pipes(int **pipes, int read_fd, int write_fd)
-{
-	int	i;
-
-	i = -1;
-	while (pipes[++i])
-	{
-		if (pipes[i][0] != read_fd)
-			if (ft_close(pipes[i][0]))
-				return (1);
-		if (pipes[i][1] != write_fd)
-			if (ft_close(pipes[i][1]))
-				return (1);
-	}
-	return (0);
-}
-
-int	ft_dup2_fds(int read_fd, int write_fd)
-{
-	if (ft_dup2(read_fd, 0) || ft_dup2(write_fd, 1))
-		return (1);
-	return (0);
-}
-
-char **ft_copy(char **comands, char *path, int comands_len)
+static char **ft_copy(char **comands, char *path, int comands_len)
 {
 	char	**output;
 	int		i;
