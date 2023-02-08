@@ -6,21 +6,11 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:07:35 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/07 20:16:47 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:21:44 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-int	ft_pipe(int *fds)
-{
-	if (pipe(fds) == -1)
-	{
-		perror("");
-		return (1);
-	}
-	return (0);
-}
 
 int	**ft_create_pipes(int pipes_num)
 {
