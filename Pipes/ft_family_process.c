@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 18:04:00 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 19:00:41 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static char **ft_copy(char **comands, char *path, int comands_len)
 		}
 
 	}
+	free(path);
 	output[i] = NULL;
 	return (output);
 }
@@ -54,6 +55,7 @@ int	ft_family_process(int **pipes, char **comands, int i)
 		aux_cmd = ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands));
 		if (!aux_cmd)
 			exit(-1);
+		free(comands);
 		ft_execve(aux_cmd[0], aux_cmd);
 		exit(-1);
 	}
