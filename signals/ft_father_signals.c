@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:30:39 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 18:03:24 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 18:13:46 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@ static void	ft_manage_terminal() {
   tcsetattr(STDIN_FILENO, TCSANOW, &tty);
 }
 
+void	ft_sigint_action()
+{
+		rl_on_new_line();
+		write(1, "\n", 1);
+		rl_replace_line("", 1);
+   		rl_redisplay();
+}
+
 static	void ft_manage_signals(int signum)
 {
 	if (signum == SIGQUIT)
@@ -27,7 +35,7 @@ static	void ft_manage_signals(int signum)
 		ft_sigint_action();
 }
 
-int ft_add_parent_listener()
+int ft_add_father_listener()
 {
 	type_sa sa;
 

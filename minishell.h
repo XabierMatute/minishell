@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 18:04:04 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 18:13:32 by jperez           ###   ########.fr       */
 /*   Updated: 2023/02/01 18:34:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -79,7 +79,7 @@ void	ft_pop(t_stack *stack, int index);
 
 /* ------------------- SIGNAALS ---------------------*/
 int ft_add_listener();
-int ft_add_parent_listener();
+int ft_add_father_listener();
 int ft_add_child_listener();
 int	ft_siagction(int signal, type_sa *sa);
 void	ft_sigint_action();

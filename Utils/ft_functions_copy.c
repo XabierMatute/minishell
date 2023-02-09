@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/08 19:18:46 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 18:09:07 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,15 @@ int	ft_pipe(int *fds)
 		perror("");
 		return (1);
 	}
+	return (0);
+}
+
+int	ft_siagction(int signal, type_sa *sa)
+{
+	if (sigaction(signal, sa, NULL) == -1)
+    {
+        perror("sigaction");
+        return (1);
+    }
 	return (0);
 }

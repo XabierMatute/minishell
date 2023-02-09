@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/09 17:21:21 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/09 18:10:20 by jperez           ###   ########.fr        #
 #    Updated: 2023/02/01 18:38:30 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -35,7 +35,6 @@ SRC :=	main.c					\
 		built-ins/ft_manage_stack.c	\
 		built-ins/ft_copy_env.c	\
 		built-ins/ft_exit.c	\
-		signals/ft_signals.c		\
 		Pipes/ft_find_cmd.c			\
 		Pipes/ft_create_pipes.c			\
 		Utils/ft_getenv.c			\

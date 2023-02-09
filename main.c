@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:47:03 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/09 17:56:50 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 18:13:08 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(int argc, char **argv, char **env)
 	while(1)
 	{
 		//ft_add_listener();
-		ft_add_parent_listener();
+		ft_add_father_listener();
 		str = readline("minishel: ");
 		if (str == NULL)
 			exit(-1);
