@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/08 19:26:49 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 18:04:00 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	ft_family_process(int **pipes, char **comands, int i)
 	char	**aux_cmd;
 	
 	pid = fork();
+	ft_add_child_listener();
 	if (pid == 0)
 	{
 		//ft_redirect_pipes(pipes, pipes[i][0], pipes[i + 1][1]);

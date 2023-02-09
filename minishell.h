@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/08 17:26:58 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 18:04:04 by jperez           ###   ########.fr       */
 /*   Updated: 2023/02/01 18:34:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -23,6 +23,7 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include <signal.h>
+#include <termios.h>
 
 # include "./libft/libft.h"
 
@@ -76,8 +77,12 @@ void	delete_node(t_node *node);
 void	ft_push(t_stack *stack, char *variable);
 void	ft_pop(t_stack *stack, int index);
 
-/* ------------------- MANAGE-ENV-NODES ---------------------*/
+/* ------------------- SIGNAALS ---------------------*/
 int ft_add_listener();
+int ft_add_parent_listener();
+int ft_add_child_listener();
+int	ft_siagction(int signal, type_sa *sa);
+void	ft_sigint_action();
 
 /* ------------------- PIPES ---------------------*/
 char *ft_find_cmd(char *cmd);

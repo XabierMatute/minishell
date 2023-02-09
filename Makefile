@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/08 17:27:21 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/09 17:21:21 by jperez           ###   ########.fr        #
 #    Updated: 2023/02/01 18:38:30 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -42,6 +42,8 @@ SRC :=	main.c					\
 		Pipes/ft_family_process.c		\
 		Utils/ft_functions_copy.c		\
 		Pipes/ft_reorganize_fds.c		\
+		Signals/ft_father_signals.c		\
+		Signals/ft_child_signals.c
 		
 OBJ := $(SRC:%.c=%.o)
 

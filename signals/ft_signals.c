@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 19:20:23 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 17:09:10 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 17:27:47 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,15 @@ int	ft_siagction(int signal, type_sa *sa)
 	return (0);
 }
 
-void ft_manage_signals(int signum)
+void	ft_sigint_action()
 {
-	if (signum == SIGQUIT)
-		rl_redisplay();
-	/*
-	if (signum == EOF)
-	{
-		printf("GGGGG\n");
-		exit(0);
-	}
-	*/
-	if (signum == SIGINT)
-	{
 		rl_on_new_line();
 		write(1, "\n", 1);
 		rl_replace_line("", 1);
    		rl_redisplay();
-	}
 }
 
+/*
 int ft_add_listener()
 {
 	type_sa sa;
@@ -52,3 +41,4 @@ int ft_add_listener()
 
 	return (0);
 }
+*/
