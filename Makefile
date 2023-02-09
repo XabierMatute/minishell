@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/09 18:47:14 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/09 18:53:14 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC :=	main.c					\
 		Parse/validsintax.c		\
 		Parse/checknoin.c		\
 		Parse/checkpipes.c		\
+		Parse/checkdiples.c		\
 		Parse/getir_ae.c		\
 		Parse/getir.c			\
 		Parse/getor_ae.c		\
