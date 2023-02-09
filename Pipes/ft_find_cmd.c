@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:49:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/07 18:49:42 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/09 19:00:57 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ char *ft_find_cmd(char *cmd)
 	if (!path)
 		return (NULL);
 	folder = ft_find_folder(path, cmd);
+	if (!folder)
+		return (cmd);
 	return (folder);
 }
