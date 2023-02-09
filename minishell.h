@@ -6,10 +6,10 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 18:13:32 by jperez           ###   ########.fr       */
-/*   Updated: 2023/02/01 18:34:47 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/09 18:47:35 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
@@ -56,6 +56,7 @@ size_t	ft_wlen(const char *s, char c);
 char	**ft_split(char const *s, char c);
 int		checknoin(char *s);
 int		checkpipes(char *s);
+char	*extract(char *s);
 
 /* ------------------- BUILT_INS ---------------------*/
 void	ft_cd(char **args);
