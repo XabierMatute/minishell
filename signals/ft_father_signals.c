@@ -1,53 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functions_copy.c                                :+:      :+:    :+:   */
+/*   ft_father_signals.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/08 19:18:46 by jperez           ###   ########.fr       */
+/*   Created: 2023/02/08 18:30:39 by jperez            #+#    #+#             */
+/*   Updated: 2023/02/08 19:05:16 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	ft_execve(char *path, char **comands)
+static	void ft_manage_signals(int signum)
 {
-	if (execve(path, comands, NULL)  == -1)
+	if (signum == SIGQUIT)
 	{
-		perror("");
-		return (1);
+	printf("aita");
+		rl_redisplay();
 	}
-	return (0);
-}
- 
-int	ft_dup2(int fd1, int fd2)
-{
-	if (dup2(fd1, fd2) == -1)
-	{
-		perror("");
-		return (1);
-	}
-	return (0);
+	else if (signum == SIGINT)
+		ft_sigint_action();
 }
 
-int	ft_close(int pipe)
+int ft_add_parent_listener()
 {
-	if (close(pipe) == -1)
-	{
-		perror("");
-		return (1);
-	}
-	return (0);
-}
+	type_sa sa;
 
-int	ft_pipe(int *fds)
-{
-	if (pipe(fds) == -1)
-	{
-		perror("");
+	sa.sa_handler = ft_manage_signals;
+	ft_manage_terminal(0);
+	if (ft_siagction(SIGQUIT, &sa) || ft_siagction(SIGINT, &sa))
 		return (1);
-	}
+
 	return (0);
 }

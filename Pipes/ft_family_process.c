@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/08 17:31:34 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/08 19:26:49 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	ft_family_process(int **pipes, char **comands, int i)
 		if (!aux_cmd)
 			exit(-1);
 		ft_execve(aux_cmd[0], aux_cmd);
+		exit(-1);
 	}
 	else
 	{
