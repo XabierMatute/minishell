@@ -6,7 +6,11 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2023/02/09 19:35:10 by jperez           ###   ########.fr        #
+=======
+#    Updated: 2023/02/10 13:12:15 by xmatute-         ###   ########.fr        #
+>>>>>>> 9a7e6033072fc7b17ca526a51e71cceea61cac22
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +27,17 @@ SRC :=	main.c					\
 		Parse/getir.c			\
 		Parse/getor_ae.c		\
 		Parse/getor.c			\
+		Parse/expand.c			\
+		Parse/expand39.c		\
+		Parse/expand36.c		\
+		Parse/expand34.c		\
 		Utils/contain.c			\
 		Utils/closed.c			\
 		Utils/ft_split.c		\
 		Utils/ft_wlen.c			\
 		Utils/extract.c			\
 		Utils/liberatesl.c		\
+		Utils/ft_joinfree.c		\
 		built-ins/ft_pwd.c		\
 		built-ins/ft_cd.c		\
 		built-ins/ft_echo.c	\

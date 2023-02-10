@@ -1,49 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getenv.c                                        :+:      :+:    :+:   */
+/*   expand39.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 17:24:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/10 15:35:00 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/02/10 12:13:51 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/02/10 12:17:07 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-static size_t ft_vlen(char *s)
+static size_t e39len(char *s)
 {
 	size_t	l;
 
 	l = 0;
-	while (s[l] && s[l] != '=')
+	while (s[l] && s[l] != 39)
 		l++;
 	return (l);
 }
 
-char	*ft_advance_to_equal(char *variable)
+char *expand39(char *s)
 {
-	if (!*variable)
-		return (NULL);
-	while (*variable != '=')
-		variable++;
-	return (++variable);
-}
+	char	*e;
+	size_t	l;
+	
+	// printf("s39 = %s\n", s);
+	if (!s)
+		return(0);
+	if (!*s)
+		return(ft_strdup(""));
+	l = e39len(s);
+	// printf("l39 = %i\n", l);
 
-char *ft_getenv(char *variable)
-{
-	t_node	*ptr;
-
-	if (G_cp_env->peek)
+	e = ft_calloc(l + 1, sizeof(char));
+	if (!e)
+		return(0);//printear error de memoria
+	
+	while (l--)
 	{
-		ptr = G_cp_env->peek;
-		while (ptr)
-		{
-			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)))
-				return (ft_advance_to_equal(ptr->variable));
-			ptr = ptr->next;
-		}
+		// printf("e[%i] = %c\n", l, s[l]);
+
+		e[l] = s[l];
 	}
-	return (NULL);
+	// printf("e39 = %s\n", e);
+
+	return (ft_strjoinfree(e, expand(s + ft_strlen(e) + 1)));
 }
