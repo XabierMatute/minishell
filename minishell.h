@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 18:47:35 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/09 19:34:54 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	ft_execve(char *path, char **comands);
 int	ft_dup2(int fd1, int fd2);
 int	ft_close(int pipe);
 int	ft_pipe(int *fds);
+void	ft_free_2d_arr(char **arr);
 
 
 #endif
