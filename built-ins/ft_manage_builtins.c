@@ -1,63 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functions_copy.c                                :+:      :+:    :+:   */
+/*   ft_manage_builtins.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 19:31:29 by jperez           ###   ########.fr       */
+/*   Created: 2023/02/10 16:33:20 by jperez            #+#    #+#             */
+/*   Updated: 2023/02/10 17:33:06 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	ft_execve(char *path, char **comands)
+int	ft_manage_builtins(char *str)
 {
-	if (execve(path, comands, NULL)  == -1)
+	if (!strncmp(str, "echo", 4))
 	{
-		perror("");
+		ft_echo(ft_split(str, ' ') + 1);
 		return (1);
 	}
-	return (0);
-}
- 
-int	ft_dup2(int fd1, int fd2)
-{
-	if (dup2(fd1, fd2) == -1)
+	else if (!strncmp(str, "cd", 2))
 	{
-		perror("");
+		ft_cd(ft_split(str, ' ') + 1);
 		return (1);
 	}
-	return (0);
-}
-
-int	ft_close(int pipe)
-{
-	if (close(pipe) == -1)
+	else if (!strncmp(str, "pwd", 3))
 	{
-		perror("");
+		ft_pwd(ft_split(str, ' ') + 1);
 		return (1);
 	}
-	return (0);
-}
-
-int	ft_pipe(int *fds)
-{
-	if (pipe(fds) == -1)
+	else if (!strncmp(str, "export", 6))
 	{
-		perror("");
+		ft_export(ft_split(str, ' ') + 1);
 		return (1);
 	}
-	return (0);
-}
-
-int	ft_siagction(int signal, type_sa *sa)
-{
-	if (sigaction(signal, sa, NULL) == -1)
-    {
-        perror("sigaction");
-        return (1);
-    }
+	else if (!strncmp(str, "unset", 5))
+	{
+		ft_unset(ft_split(str, ' ') + 1);
+		return (1);
+	}
+	else if (!strncmp(str, "env", 3))
+	{
+		ft_env(ft_split(str, ' ') + 1);
+		return (1);
+	}
 	return (0);
 }

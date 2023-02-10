@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 19:00:41 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/10 16:57:17 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static char **ft_copy(char **comands, char *path, int comands_len)
 			output[j] = ft_strdup(comands[i]);
 			j++;
 		}
-
 	}
 	free(path);
 	output[i] = NULL;
@@ -45,6 +44,7 @@ int	ft_family_process(int **pipes, char **comands, int i)
 	int		pid;
 	char	**aux_cmd;
 	
+	printf("HOLLLLAA\n");;
 	pid = fork();
 	ft_add_child_listener();
 	if (pid == 0)
@@ -62,6 +62,7 @@ int	ft_family_process(int **pipes, char **comands, int i)
 	else
 	{
 		waitpid(pid, NULL, 0);
+		ft_free_2d_arr(comands);
 		//ft_free_cmd();
 	}
 	return (0);

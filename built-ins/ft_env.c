@@ -6,29 +6,37 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 19:06:13 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/01 19:23:42 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:12:36 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void ft_env(t_stack *cp_env, char **args)
+static int	ft_check_args(char **args)
 {
-	t_node *ptr;
-
 	if (ft_args_lenght(args) != 0)
 	{
 		ft_printf("❌ env: to many arguments\n");
-		return ;
+		return (1);
 	}
-	if (cp_env->peek)
+	return (0);
+}
+
+void ft_env(char **args)
+{
+	t_node *ptr;
+
+	if (ft_check_args(args))
+		return ;
+	if (G_cp_env->peek)
 	{
-		if (cp_env->peek->next)
+		if (G_cp_env->peek->next)
 		{
-			ptr = cp_env->peek;
+			ptr = G_cp_env->peek;
 			while (ptr)
 			{
-				printf("%s\n", ptr->variable);
+				if (ft_strncmp(ptr->variable, "?" , 1))
+					ft_printf("%s\n", ptr->variable);
 				ptr = ptr->next;
 			}
 		}

@@ -6,11 +6,8 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2023/02/09 19:35:10 by jperez           ###   ########.fr        #
-=======
+#    Updated: 2023/02/10 16:53:28 by jperez           ###   ########.fr        #
 #    Updated: 2023/02/10 13:12:15 by xmatute-         ###   ########.fr        #
->>>>>>> 9a7e6033072fc7b17ca526a51e71cceea61cac22
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +56,8 @@ SRC :=	main.c					\
 		Signals/ft_father_signals.c		\
 		Signals/ft_child_signals.c		\
 		Utils/ft_free_2D_arr.c			\
+		Utils/ft_strisalnum.c			\
+		built-ins/ft_manage_builtins.c	\
 		
 OBJ := $(SRC:%.c=%.o)
 

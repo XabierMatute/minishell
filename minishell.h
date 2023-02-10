@@ -6,11 +6,8 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/02/09 19:34:54 by jperez           ###   ########.fr       */
-=======
+/*   Updated: 2023/02/10 17:18:21 by jperez           ###   ########.fr       */
 /*   Updated: 2023/02/10 13:31:58 by xmatute-         ###   ########.fr       */
->>>>>>> 9a7e6033072fc7b17ca526a51e71cceea61cac22
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +68,15 @@ char	*ft_strjoinfree(char *s1, char *s2);
 
 /* ------------------- BUILT_INS ---------------------*/
 void	ft_cd(char **args);
-void	ft_pwd();
+void	ft_pwd(char **args);
 void	ft_echo(char **args);
-void	ft_export(t_stack *cp_env, char **variables);
+void	ft_export(char **variables);
 void 	pipes(char **comands);
-void ft_env(t_stack *cp_env, char **args);
+void ft_env(char **args);
 int	ft_args_lenght(char **args);
-void	ft_unset(t_stack *cp_env, char **args);
+void	ft_unset(char **args);
 void	ft_exit(t_stack *cp_env);
+int	ft_manage_builtins(char *str);
 
 /* ------------------- MANAGE-ENV-NODES ---------------------*/
 t_stack	*ft_create_env(char **env);
@@ -112,6 +110,7 @@ int	ft_dup2(int fd1, int fd2);
 int	ft_close(int pipe);
 int	ft_pipe(int *fds);
 void	ft_free_2d_arr(char **arr);
+int	ft_strisalnum(char *str);
 
 
 #endif

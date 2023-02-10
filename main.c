@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:47:03 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/09 18:13:08 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:22:38 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main(int argc, char **argv, char **env)
 {
 	char	*str;
 
+	printf("--->%d\n", ft_strisalnum("'fff fff'"));
 	str = NULL;
 	ft_create_env(env);
 	printf("PID: %d\n\n", getpid());
@@ -49,12 +50,11 @@ int main(int argc, char **argv, char **env)
 		if (*str != '\0')
 		{
 			//cambiar letras de señales
-			if (!strncmp(str, "exit", 4))
-				exit(-1);
 			add_history(str);
 			if (validsintax(str))
 			{
-				ft_family_process(ft_create_pipes(0), ft_split(str, ' '), 0);
+				if (ft_manage_builtins(str) == 0)
+					ft_family_process(ft_create_pipes(0), ft_split(str, ' '), 0);
 				// pipes(ft_split(str, '|'));//si split da NULL-> ERROR
 			}
 			else
