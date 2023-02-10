@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 18:47:35 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/10 13:31:58 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,13 @@ char	**ft_split(char const *s, char c);
 int		checknoin(char *s);
 int		checkpipes(char *s);
 char	*extract(char *s);
+char *expand(char *s);
+char *expand39(char *s);
+char *expand36(char *s);
+size_t e36len(char *s);
+char *expand34(char *s);
+char	*ft_strjoinfree(char *s1, char *s2);
+
 
 /* ------------------- BUILT_INS ---------------------*/
 void	ft_cd(char **args);
