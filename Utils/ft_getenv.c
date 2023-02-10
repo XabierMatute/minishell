@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_getenv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:24:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/07 18:45:12 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/10 15:35:00 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
+
+static size_t ft_vlen(char *s)
+{
+	size_t	l;
+
+	l = 0;
+	while (s[l] && s[l] != '=')
+		l++;
+	return (l);
+}
 
 char	*ft_advance_to_equal(char *variable)
 {
@@ -30,7 +40,7 @@ char *ft_getenv(char *variable)
 		ptr = G_cp_env->peek;
 		while (ptr)
 		{
-			if (!ft_strncmp(ptr->variable, variable, ft_strlen(variable)))
+			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)))
 				return (ft_advance_to_equal(ptr->variable));
 			ptr = ptr->next;
 		}
