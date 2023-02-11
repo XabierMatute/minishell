@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_2D_arr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 19:34:06 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 19:35:19 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 19:44:05 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@ void	ft_free_2d_arr(char **arr)
 	int	i;
 
 	i = -1;
-	while (arr[++i])
-		free(arr[i]);
-	free(arr);
+	if (arr)
+	{
+		while (arr[++i])
+		{
+			free(arr[i]);
+			arr[i] = NULL;
+		}
+		free(arr);
+	}
+	arr = NULL;
+
 }

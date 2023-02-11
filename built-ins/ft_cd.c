@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 19:29:04 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 19:45:29 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void	ft_cd(char **args)
 		if (!ft_check_access(args[1]))
 			chdir(args[1]);
 	}
+	exit(55);
 }
 

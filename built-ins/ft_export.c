@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_export.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:09:40 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/10 17:38:02 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 19:46:23 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ void	ft_export(char **variables)
 		if (!ft_check_variable(variables[i]))
 			ft_push(G_cp_env, variables[i]);
 	}
+	exit (55);
+
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pwd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:35 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/10 16:48:26 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 19:46:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ void	ft_pwd(char **args)
 		return ;
 	getcwd(buff, PATH_MAX);
 	ft_printf("%s\n", buff);
+	exit (55);
+
 }

@@ -6,15 +6,16 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/10 16:53:28 by jperez           ###   ########.fr        #
-#    Updated: 2023/02/10 13:12:15 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/11 19:16:12 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 
 NAME := minishell
 
 SRC :=	main.c					\
+		minishell.c				\
 		Utils/ignoreq.c			\
 		Parse/validsintax.c		\
 		Parse/checknoin.c		\

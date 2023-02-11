@@ -6,10 +6,10 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/10 17:18:21 by jperez           ###   ########.fr       */
-/*   Updated: 2023/02/10 13:31:58 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:15:21 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 
 #ifndef MINISHELL_H
@@ -45,7 +45,7 @@ typedef struct stack
 
 t_stack	*G_cp_env;
 
-
+int	minishell(void);
 int		ft_printf(char const *s, ...);
 int 	validsintax(char *s);
 int 	closedq(char *s);
@@ -66,12 +66,12 @@ char *expand34(char *s);
 char	*ft_strjoinfree(char *s1, char *s2);
 
 
+
 /* ------------------- BUILT_INS ---------------------*/
 void	ft_cd(char **args);
 void	ft_pwd(char **args);
 void	ft_echo(char **args);
 void	ft_export(char **variables);
-void 	pipes(char **comands);
 void ft_env(char **args);
 int	ft_args_lenght(char **args);
 void	ft_unset(char **args);
@@ -95,10 +95,11 @@ int	ft_siagction(int signal, type_sa *sa);
 void	ft_sigint_action();
 
 /* ------------------- PIPES ---------------------*/
+int pipes(char **comands);
 char *ft_find_cmd(char *cmd);
 int	**ft_create_pipes(int pipes_num);
-int	ft_family_process(int **pipes, char **comands, int i);
-int	ft_dup2_fds(int read_fd, int write_fd);
+int	ft_family_process(int **pipes, char *comand, int i);
+int	ft_dup2_fds(int **pipes, int read_fd, int write_fd);
 int	ft_close_pipes(int **pipes, int read_fd, int write_fd);
 
 /* ------------------- MANAGE-ENV-NODES ---------------------*/

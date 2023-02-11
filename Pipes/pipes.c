@@ -6,31 +6,40 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:04:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/06 19:28:48 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 19:52:43 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void pipes(char **comands)
+static void merror(void)
+{
+	ft_printf("⚠️Error de memoria\n");
+	destroy_stack(G_cp_env);
+}
+
+int pipes(char **comands)
 {
 	int	i;
-	int	**p;
+	int		**pipes;
 
 	if (!comands)
-	{
-		ft_printf("⚠️Error de memoria\n");
-		return ;
-	}
-	/*
+		merror();
+	pipes = ft_create_pipes(ft_args_lenght(comands) - 1);
+	if (ft_args_lenght(comands) > 1 && !pipes)
+		merror();
+	// ft_family_process1(pipes, comands[0]);
+	printf("----->Father: %d\n", getpid());
 	i = 0;
-	p = createpipes(ft_args_lenght(comands));
-	pipe(comands[i], 0, p[i][1]);
-	i++;
-		while (comands[i + 1])
-		{
-			pipe(comands[i], p[i][0], p[i + 1][1]);
-		}
-	liberatesl(&comands, 4294967295);
-	*/
+	while (comands[i] && G_cp_env)
+	{
+		// if (pipes[i])
+			ft_family_process(pipes, comands[i], i);
+		// else if (pipes[i - 1])
+		// 	ft_family_processn(pipes, comands[i], i);		
+		i++;
+	}
+	ft_free_2d_arr(comands);
+	ft_free_2d_arr(pipes);
+	return (0);
 }

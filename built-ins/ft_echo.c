@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:55:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/01/31 19:51:44 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 19:45:53 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void	ft_echo(char **args)
 		ft_print_args(args);
 	else
 		ft_print_n_args(args);
+	exit (55);
 }

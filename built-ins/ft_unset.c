@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:31:33 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/10 17:37:33 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 19:46:34 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,6 @@ void	ft_unset(char **args)
 		if (!ft_check_variable(args[i]))
 			ft_delete_variable(G_cp_env, args[i]);
 	}
+	exit (55);
+
 }

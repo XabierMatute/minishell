@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:06:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/01 18:51:39 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:25:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,10 @@ static int	last(char *s)
 
 	i = 0;
 	while (s[i])
-	{
 		i++;
-	}
 	i--;
-	while (s[i] == ' ')
-	{
+	while (s[i] == ' ' && i > 0)
 		i--;
-	}
 	if (s[i] == '|')
 	{
 		ft_printf("😞Error: no interpreto el pipe al final\n");

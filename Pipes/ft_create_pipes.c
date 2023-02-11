@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_create_pipes.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:07:35 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/08 17:21:44 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 19:19:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	**ft_create_pipes(int pipes_num)
 	int		i;
 	int		**pipes;
 	
+	if (!pipes_num)
+		return (NULL);	
 	pipes = (int **)malloc(sizeof(int *) * (pipes_num + 1));
 	if (!pipes)
 		return (NULL);
