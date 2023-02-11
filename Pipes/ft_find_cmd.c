@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_cmd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:49:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 19:00:57 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 20:47:34 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ char *ft_find_cmd(char *cmd)
 		return (NULL);
 	folder = ft_find_folder(path, cmd);
 	if (!folder)
-		return (cmd);
+		return (ft_strdup(cmd));
 	return (folder);
 }

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 19:52:01 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:10:33 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,13 @@ int	ft_family_process(int **pipes, char *comand, int i)
 		if (ft_choose_dups(pipes, i))
 			return (rerror());
 		// redirections(comands);
-		comands = ft_split(comand, ' ');
+		comands =expandall(ft_split(comand, ' '));
 		if (!comands)
 			return(10);//mejora esto
 		if (comands[0])
 		{
-			ft_manage_builtins(comands);
-			aux_cmd = ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands));
+			// ft_manage_builtins(comands);
+			aux_cmd = ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands));// lo de comand not found o No such file or directory?
 			if (!aux_cmd)
 				exit(-1);//cambiar esto por lo del env?
 			ft_free_2d_arr(comands);

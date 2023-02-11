@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 19:15:21 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:03:35 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ char *expand36(char *s);
 size_t e36len(char *s);
 char *expand34(char *s);
 char	*ft_strjoinfree(char *s1, char *s2);
+char	**expandall(char **ss);
 
 
 
