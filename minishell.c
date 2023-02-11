@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:21:27 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/11 19:16:29 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:34:04 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	minishell(void)
 			exit(-1);
 		if (*str != '\0')
 		{
-			if (!strncmp(str, "exit", 4))
+			if (!strncmp(str, "exit", ft_strlen(str)))
 				exit(-1);
 			add_history(str);
 			if (validsintax(str))

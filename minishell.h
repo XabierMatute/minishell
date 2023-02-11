@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 21:03:35 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:26:46 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	 	contain(char *s, char c);
 char 	*ignore(char *s, char c);
 char 	*ignoreq(char *s);
 char	**liberatesl(char ***f, unsigned int p);
-size_t	ft_wlen(const char *s, char c);
+size_t	ft_wlen(char *s, char c);
 char	**ft_split(char const *s, char c);
 int		checknoin(char *s);
 int		checkpipes(char *s);

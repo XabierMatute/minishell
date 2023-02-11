@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:56:29 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 17:40:10 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:26:09 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-size_t	ft_wlen(const char *s, char c)
+size_t	ft_wlen(char *s, char c)
 {
 	int	l;
 
