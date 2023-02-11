@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/11 19:16:12 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/11 21:47:49 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRC :=	main.c					\
 		Pipes/pipes.c \
 		built-ins/ft_env.c	\
 		Utils/ft_args_lenght.c		\
+		Utils/Errors.c				\
 		built-ins/ft_manage_nodes.c	\
 		built-ins/ft_manage_stack.c	\
 		built-ins/ft_copy_env.c	\

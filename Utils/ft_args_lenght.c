@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_args_lenght.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:30:07 by jperez            #+#    #+#             */
-/*   Updated: 2023/01/31 19:44:18 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/11 21:41:23 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_args_lenght(char **args)
 	int	i;
 
 	i = -1;
-	while (args[++i]);
+	if (args)
+		while (args[++i]);
 	return (i);
 }
