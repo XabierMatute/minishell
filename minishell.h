@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 21:47:20 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:07:26 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void ft_env(char **args);
 int	ft_args_lenght(char **args);
 void	ft_unset(char **args);
 void	ft_exit(t_stack *cp_env);
-int	ft_manage_builtins(char *str);
+int	ft_manage_builtins(char **comands);
 
 /* ------------------- MANAGE-ENV-NODES ---------------------*/
 t_stack	*ft_create_env(char **env);

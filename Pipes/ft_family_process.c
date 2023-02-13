@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 21:46:45 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:06:14 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	ft_family_process(int **pipes, char *comand, int i)
 			return(10);//mejora esto
 		if (comands[0])
 		{
-			// ft_manage_builtins(comands);
+			ft_manage_builtins(comands);
 			aux_cmd = ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands));// lo de comand not found o No such file or directory? btw tiene pinta de que esta linea es demasiado larga para la norma
 			if (!aux_cmd)
 				exit(-1);//cambiar esto por lo del env?
