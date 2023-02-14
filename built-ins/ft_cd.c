@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 19:45:29 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:50:18 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_check_access(char *path)
 {
+	printf("---->%s\n", path);
 	if (access(path, F_OK | R_OK))
 	{
 		ft_printf("❌ %s: ", path);
@@ -37,12 +38,12 @@ int		ft_check_cd_args(char **args)
 
 void	ft_cd(char **args)
 {
-	if (ft_args_lenght(args) == 1)
+	if (!*args)
 		chdir(ft_getenv("HOME"));
 	else
 	{
-		if (!ft_check_access(args[1]))
-			chdir(args[1]);
+		if (!ft_check_access(args[0]))
+			chdir(args[0]);
 	}
 	exit(55);
 }
