@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:55:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/14 13:31:03 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:47:46 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ void	ft_print_n_args(char **args)
 void	ft_echo(char **args)
 {
 	if (*args)
-		if (ft_strncmp(*args, "-n", 2))
-		{
-			args++;
-			ft_print_args(args);
-		}
+	{
+		if (!ft_strncmp(*args, "-n\0", 3))
+			ft_print_args(++args);
+		else
+			ft_print_n_args(args);
+	}
 	else
-		ft_print_n_args(args);
+		ft_printf("\n");
 
 		
 	exit (55);
