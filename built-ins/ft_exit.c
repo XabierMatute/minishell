@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 19:09:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/01 19:15:57 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/13 20:35:49 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_exit(t_stack *cp_env)
 {
 	destroy_stack(cp_env);
-	exit(-1);
+	exit(0);
 }

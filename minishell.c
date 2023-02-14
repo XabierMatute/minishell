@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:21:27 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/11 21:53:53 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/13 20:37:13 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,23 @@ int	minishell(void)
 	str = NULL;
 	while (G_cp_env)
 	{
-		ft_add_father_listener();
+		if(ft_add_father_listener())
+			serror();
 		str = readline("minishell: ");
 		if (str == NULL)
-			exit(-1);// aqui hay que liberar
+			ft_exit(G_cp_env);
 		if (*str != '\0')
 		{
 			if (!strncmp(str, "exit", ft_strlen(str)))
-				exit(-1);
+			{
+				ft_printf("%s\n", str);
+				ft_exit(G_cp_env);
+			}
 			add_history(str);
 			if (validsintax(str))
 				pipes(ft_split(str, '|'));
 		}
-		if (str)
-			free(str);
-		str = NULL;
+		free(str);
 	}
 	return (0);
 }

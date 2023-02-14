@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/13 15:06:14 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:13:04 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	ft_choose_dups(int **pipes, int i)
 		return (ft_dup2_fds(pipes, pipes[i - 1][0], pipes[i][1]));
 }
 
+
 int	ft_family_process(int **pipes, char *comand, int i)
 {
 	pid_t		pid;
@@ -58,13 +59,17 @@ int	ft_family_process(int **pipes, char *comand, int i)
 	char	**comands;
 	
 	// printf("HOLLLLAA\n");
+
 	pid = fork();
 	ft_add_child_listener();
+	
 	if (pid == 0)//yo metia todo esto en una función child process
 	{
-		printf("----->Son[%d]: %d\n", i, getpid());
+
+			
+		// printf("----->Son[%d]: %d\n", i, getpid());
 		if (ft_choose_dups(pipes, i))
-			return (rerror());
+			return (rerror());		
 		// redirections(comands);// lo unico gordo que queda ^^
 		comands =expandall(ft_split(comand, ' '));
 		if (!comands)
@@ -82,9 +87,22 @@ int	ft_family_process(int **pipes, char *comand, int i)
 	}
 	else
 	{
-		waitpid(pid, NULL, 0);
+		if (pipes)
+		{
+			/* code */
+		}
+		
+		// if (!pipes)
+		// {
+		// 	printf("\nadios %i\n", waitpid(-1, NULL, 0));
+		// }
+		// else if (!pipes[i])
+		// 	printf("\nadios %i\n", waitpid(-1, NULL, 0));
+		
+
+		// dup2(STDIN_FILENO, 0);
+		// dup2(STDOUT_FILENO, 1);
 		//ft_free_cmd();
 	}
 	return (0);
 }
-

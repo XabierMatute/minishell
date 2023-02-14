@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_functions_copy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 19:31:29 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/13 19:08:01 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_execve(char *path, char **comands)
 {
-	if (execve(path, comands, NULL)  == -1)
+	if (execve(path, comands, env2)  == -1)//hacer esto mejor
 	{
 		perror("");
 		return (1);

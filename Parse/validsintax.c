@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:28:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/01 19:24:40 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/13 20:39:56 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 int validsintax(char *s)
 {
 	return (checknoin(s) &&
-			checkpipes(s));
+			checkpipes(s) &&
+			checkdiples(s));
 }
 
 

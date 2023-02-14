@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/13 15:07:26 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/13 20:50:17 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@
 
 # include "./libft/libft.h"
 
+
+char **env2;
+
 // #include "readline/readline.h"
 // #include "readline/history.h"
 typedef struct sigaction type_sa;
@@ -45,28 +48,26 @@ typedef struct stack
 
 t_stack	*G_cp_env;
 
-int	minishell(void);
+int		minishell(void);
+
 int		ft_printf(char const *s, ...);
+
+/* ------------------- CHECKS ---------------------*/
 int 	validsintax(char *s);
-int 	closedq(char *s);
-int	 	contain(char *s, char c);
-char 	*ignore(char *s, char c);
-char 	*ignoreq(char *s);
-char	**liberatesl(char ***f, unsigned int p);
-size_t	ft_wlen(char *s, char c);
-char	**ft_split(char const *s, char c);
 int		checknoin(char *s);
 int		checkpipes(char *s);
-char	*extract(char *s);
-char *expand(char *s);
-char *expand39(char *s);
-char *expand36(char *s);
-size_t e36len(char *s);
-char *expand34(char *s);
-char	*ft_strjoinfree(char *s1, char *s2);
+int		checkdiples(char *s);
+int 	closedq(char *s);
+
+/* ------------------- PARSE ---------------------*/
 char	**expandall(char **ss);
-int merror(void);
-int rerror(void);
+char	 *expand(char *s);
+char 	*expand39(char *s);
+char 	*expand36(char *s);
+char	 *expand34(char *s);
+size_t	 e36len(char *s);
+
+
 
 
 
@@ -115,6 +116,21 @@ int	ft_close(int pipe);
 int	ft_pipe(int *fds);
 void	ft_free_2d_arr(char **arr);
 int	ft_strisalnum(char *str);
+char	*ft_strjoinfree(char *s1, char *s2);
+char 	*ignore(char *s, char c);
+char 	*ignoreq(char *s);
+int	 	contain(char *s, char c);
+char	*extract(char *s);
+size_t	ft_wlen(char *s, char c);
+char	**ft_split(char const *s, char c);
+char	**liberatesl(char ***f, unsigned int p);
 
+
+
+
+/* ------------------- ERRORS ---------------------*/
+int merror(void);
+int rerror(void);
+int serror(void);
 
 #endif
