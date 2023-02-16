@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:13:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/10 13:32:26 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:52:34 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char *expand3634(char *s)
 		e = ft_strdup(ft_getenv(v));
 	else
 		e = ft_strdup("");
-	l = strlen(v);
+	l = ft_strlen(v);
 	free(v);
 
 	return (ft_strjoinfree(e, expand34(s + l)));

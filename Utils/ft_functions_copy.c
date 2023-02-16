@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/13 19:08:01 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:40:14 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 int	ft_execve(char *path, char **comands)
 {
-	if (execve(path, comands, env2)  == -1)//hacer esto mejor
+	char **env;
+
+	env = ft_transform_env();
+	if (execve(path, comands, env)  == -1)//hacer esto mejor
 	{
 		perror("");
+		free(env);
 		return (1);
 	}
+	free(env);
 	return (0);
 }
  
