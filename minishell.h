@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/13 20:50:17 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:17:07 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 #include <termios.h>
 
 # include "./libft/libft.h"
-
+# include "./readline/readline.h"
 
 char **env2;
 
@@ -124,6 +124,7 @@ char	*extract(char *s);
 size_t	ft_wlen(char *s, char c);
 char	**ft_split(char const *s, char c);
 char	**liberatesl(char ***f, unsigned int p);
+char **ft_transform_env(void);
 
 
 

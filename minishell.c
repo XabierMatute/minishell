@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:21:27 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/13 20:37:13 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:51:39 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	minishell(void)
 			ft_exit(G_cp_env);
 		if (*str != '\0')
 		{
-			if (!strncmp(str, "exit", ft_strlen(str)))
+			if (!ft_strncmp(str, "exit", ft_strlen(str)))
 			{
 				ft_printf("%s\n", str);
 				ft_exit(G_cp_env);
