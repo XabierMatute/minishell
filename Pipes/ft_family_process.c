@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/14 13:13:04 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:49:01 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_family_process(int **pipes, char *comand, int i)
 		// printf("----->Son[%d]: %d\n", i, getpid());
 		if (ft_choose_dups(pipes, i))
 			return (rerror());		
-		// redirections(comands);// lo unico gordo que queda ^^
+		// redirections(comand);// lo unico gordo que queda ^^
 		comands =expandall(ft_split(comand, ' '));
 		if (!comands)
 			return(10);//mejora esto
