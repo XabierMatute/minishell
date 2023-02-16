@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/13 20:50:17 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:02:00 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		minishell(void);
 
 int		ft_printf(char const *s, ...);
 
+
 /* ------------------- CHECKS ---------------------*/
 int 	validsintax(char *s);
 int		checknoin(char *s);
@@ -72,14 +73,15 @@ size_t	 e36len(char *s);
 
 
 /* ------------------- BUILT_INS ---------------------*/
-void	ft_cd(char **args);
-void	ft_pwd(char **args);
-void	ft_echo(char **args);
-void	ft_export(char **variables);
-void ft_env(char **args);
+int	is_builtin(char **comands);
+int	ft_cd(char **args);
+int	ft_pwd(char **args);
+int	ft_echo(char **args);
+int	ft_export(char **variables);
+int ft_env(char **args);
 int	ft_args_lenght(char **args);
-void	ft_unset(char **args);
-void	ft_exit(t_stack *cp_env);
+int	ft_unset(char **args);
+int	ft_exit(char **args);
 int	ft_manage_builtins(char **comands);
 
 /* ------------------- MANAGE-ENV-NODES ---------------------*/

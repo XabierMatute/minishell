@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/14 17:50:18 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/16 14:41:51 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_check_cd_args(char **args)
 }
 */
 
-void	ft_cd(char **args)
+int	ft_cd(char **args)
 {
 	if (!*args)
 		chdir(ft_getenv("HOME"));
@@ -45,6 +45,6 @@ void	ft_cd(char **args)
 		if (!ft_check_access(args[0]))
 			chdir(args[0]);
 	}
-	exit(55);
+	return(55);
 }
 

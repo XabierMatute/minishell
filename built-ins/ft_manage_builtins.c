@@ -6,43 +6,46 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 16:33:20 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/13 15:09:20 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:00:49 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
+int	is_builtin(char **comands)
+{
+	if (!strncmp(comands[0], "exit", ft_strlen(comands[0])))
+		return (1);
+	if (!strncmp(comands[0], "echo", ft_strlen(comands[0])))
+		return (1);
+	if (!strncmp(comands[0], "cd", ft_strlen(comands[0])))
+		return (1);
+	if (!strncmp(comands[0], "pwd", ft_strlen(comands[0])))
+		return (1);
+	if (!strncmp(comands[0], "export", ft_strlen(comands[0])))
+		return (1);
+	if (!strncmp(comands[0], "unset", ft_strlen(comands[0])))
+		return (1);
+	if (!strncmp(comands[0], "env", ft_strlen(comands[0])))
+		return (1);
+	return (0);
+}
+
 int	ft_manage_builtins(char **comands)//apañar lo de como le llega la entrada
 {
 	if (!strncmp(comands[0], "echo", ft_strlen(comands[0])))//probar a poner echooooo
-	{
-		ft_echo(comands + 1);
-		return (1);
-	}
+		return (ft_echo(comands + 1));
 	else if (!strncmp(comands[0], "cd", ft_strlen(comands[0])))
-	{
-		ft_cd(comands + 1);
-		return (1);
-	}
+		return (ft_cd(comands + 1));
 	else if (!strncmp(comands[0], "pwd", ft_strlen(comands[0])))
-	{
-		ft_pwd(comands + 1);
-		return (1);
-	}
+		return (ft_pwd(comands + 1));
 	else if (!strncmp(comands[0], "export", ft_strlen(comands[0])))
-	{
-		ft_export(comands + 1);
-		return (1);
-	}
+		return (ft_export(comands + 1));
 	else if (!strncmp(comands[0], "unset", ft_strlen(comands[0])))
-	{
-		ft_unset(comands + 1);
-		return (1);
-	}
+		return (ft_unset(comands + 1));
 	else if (!strncmp(comands[0], "env", ft_strlen(comands[0])))
-	{
-		ft_env(comands + 1);
-		return (1);//poner todos enel return para aorra lineas
-	}
+		return (ft_env(comands + 1));
+	else if (!strncmp(comands[0], "exit", ft_strlen(comands[0])))
+		return (ft_exit(comands + 1));
 	return (0);
 }

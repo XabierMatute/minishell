@@ -6,14 +6,16 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 19:09:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/13 20:35:49 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:01:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../minishell.h"
 
-void	ft_exit(t_stack *cp_env)
+int	ft_exit(char **args)
 {
-	destroy_stack(cp_env);
+	ft_printf("exit\n");
+	destroy_stack(G_cp_env);
 	exit(0);
+	return (97);
 }

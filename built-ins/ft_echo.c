@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:55:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/14 13:47:46 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/16 14:41:45 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_print_n_args(char **args)
 	ft_printf("\n");
 }
 
-void	ft_echo(char **args)
+int	ft_echo(char **args)
 {
 	if (*args)
 	{
@@ -45,5 +45,5 @@ void	ft_echo(char **args)
 		ft_printf("\n");
 
 		
-	exit (55);
+	return (55);
 }
