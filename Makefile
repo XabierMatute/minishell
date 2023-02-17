@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/11 21:47:49 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/16 16:40:04 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRC :=	main.c					\
 		Signals/ft_child_signals.c		\
 		Utils/ft_free_2D_arr.c			\
 		Utils/ft_strisalnum.c			\
+		Utils/ft_transform_env.c			\
 		built-ins/ft_manage_builtins.c	\
 		
 OBJ := $(SRC:%.c=%.o)

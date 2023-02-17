@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:52:43 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/07 12:03:30 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:15:34 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ static unsigned int	redirections(char *s)
 	{
 		s = ignoreq(s);
 		if (*s == '<')
+		{
+			if (*s == '<')
+				s++;
 			p++;
+		}
 		s++;
 	}
 	return (p);
