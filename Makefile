@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/16 16:40:04 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/17 17:05:40 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRC :=	main.c					\
 		Utils/ft_strisalnum.c			\
 		Utils/ft_transform_env.c			\
 		built-ins/ft_manage_builtins.c	\
+		Utils/ft_update_error.c			\
 		
 OBJ := $(SRC:%.c=%.o)
 
