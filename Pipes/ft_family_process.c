@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/18 13:15:32 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:35:58 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_child_process(int **pipes, char **comands, int i)
 	if (is_builtin(comands))
 		exit(ft_manage_builtins(comands));
 	ex(ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands)));
-	ft_free_2d_arr(comands);
+	ft_free_2d_arr((void **)comands);
 }
 
 int	ft_family_process(int **pipes, char *comand, int i)

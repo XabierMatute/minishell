@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/18 13:59:47 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:34:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #include <unistd.h>
 #include <curses.h>
 #include <ncurses.h>
-#include <readline/readline.h>
-#include <readline/history.h>
+// #include <readline/readline.h>
+// #include <readline/history.h>
 #include <signal.h>
 #include <termios.h>
 
@@ -117,7 +117,7 @@ int	ft_execve(char *path, char **comands);
 int	ft_dup2(int fd1, int fd2);
 int	ft_close(int pipe);
 int	ft_pipe(int *fds);
-void	ft_free_2d_arr(char **arr);
+void	ft_free_2d_arr(void **arr);
 int	ft_strisalnum(char *str);
 char	*ft_strjoinfree(char *s1, char *s2);
 char 	*ignore(char *s, char c);
@@ -125,7 +125,7 @@ char 	*ignoreq(char *s);
 int	 	contain(char *s, char c);
 char	*extract(char *s);
 size_t	ft_wlen(char *s, char c);
-char	**ft_split(char const *s, char c);
+char	**ft_split(char *s, char c);
 char	**liberatesl(char ***f, unsigned int p);
 char **ft_transform_env(void);
 void	ft_update_error(int	n);

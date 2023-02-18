@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:04:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/18 13:17:23 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:35:42 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int pipes(char **comands)
 			ft_update_error(WEXITSTATUS(ec));
 	}
 
-	ft_free_2d_arr(comands);
-	ft_free_2d_arr(pipes);
+	ft_free_2d_arr((void **)comands);
+	ft_free_2d_arr((void **)pipes);
 	return (0);
 }

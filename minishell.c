@@ -6,14 +6,14 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/18 13:15:15 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:37:12 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "minishell.h"
 
-static char **ft_copy(char **comands, char *path, int comands_len)
+static char **ft_copy(char **comands, char *path, int comands_len)//esto esta chapucilla
 {
 	char	**output;
 	int		i;
@@ -50,10 +50,12 @@ static int onlychild(char **comands)
 	pid = fork();
 	if	(!pid)
 		exit(ft_execve(comands[0], comands));
-	ft_free_2d_arr(comands);
+	ft_free_2d_arr((void **)comands);
 	waitpid (pid, &e, 0);
 	ft_update_error(WEXITSTATUS(e));
+	return(0);
 }
+
 static int nopipes(char *comand)
 {
 	char	**comands;
@@ -65,12 +67,14 @@ static int nopipes(char *comand)
 	if (comands[0])
 	{
 		if (is_builtin(comands))
-			ft_update_error(ft_manage_builtins(comands));//hay que añadirlo a $?
+			ft_update_error(ft_manage_builtins(comands));
 		else
 			onlychild(ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands)));
-		ft_free_2d_arr(comands);
+		ft_free_2d_arr((void **)comands);
 	}
+	return(0);
 }
+
 
 static void	processline(char *str)
 {

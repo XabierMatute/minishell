@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:23:19 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/11 21:14:00 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:37:31 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	**expandall(char **ss)
 		e[i] = expand(ss[i]);
 		if	(!e[i])
 		{
-			ft_free_2d_arr(e);
+			ft_free_2d_arr((void **)e);
 			return (0);
 		}
 		i++;

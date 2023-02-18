@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 19:34:06 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 19:44:05 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:33:56 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void	ft_free_2d_arr(char **arr)
+void	ft_free_2d_arr(void **arr)
 {
 	int	i;
 

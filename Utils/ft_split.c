@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:51:11 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 18:02:13 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:31:14 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-static unsigned int	palabras(char const *s, char c)
+static unsigned int	palabras(char *s, char c)
 {
 	unsigned int	p;
 
@@ -27,7 +27,7 @@ static unsigned int	palabras(char const *s, char c)
 	return (p);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char			**sl;
 	unsigned int	i;

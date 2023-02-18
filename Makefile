@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/18 14:13:18 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/18 18:26:37 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,9 +68,10 @@ OBJ := $(SRC:%.c=%.o)
 SANI 	:= -fsanitize=address -g3
 
 CC 		:= gcc
-CFLAGS 	:= -Wall  -Wextra -I./readline -I./readline/include -I.  $(SANI) $(RLFLAGS)
+CFLAGS 	:= -Wall  -Wextra -Werror  -I./readline -I./readline/include -I.  $(SANI) $(RLFLAGS)
 
-RLFLAGS := -L./readline -lreadline -L/usr/local/opt/readline/lib -I/usr/local/opt/readline/include
+# RLFLAGS := -L./readline -lreadline -L/usr/local/opt/readline/lib -I/usr/local/opt/readline/include
+RLFLAGS := -L./readline -lreadline 
 LDLIBS := -lreadline -lncurses
 # CFLAGS 	:= -Wall -Werror -Wextra $(SANI) $(RLFLAGS)
 
@@ -93,6 +94,7 @@ clean :
 		$(RM) $(OBJ)
 		make clean -C libft
 		make clean -C ft_printf
+		make clean -C readline
 
 fclean : clean
 		make fclean -C libft
