@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 19:21:27 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/17 17:55:27 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/02/18 11:59:39 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minishell.h"
 
@@ -74,7 +75,7 @@ static int nopipes(char *comand)
 static void	processline(char *str)
 {
 	if (str == NULL)
-		ft_exit(G_cp_env);
+		ft_exit(NULL);
 	if (*str != '\0')
 	{
 		add_history(str);

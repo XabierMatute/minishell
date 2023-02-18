@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/16 15:49:01 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/17 18:02:29 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,17 @@ int	ft_family_process(int **pipes, char *comand, int i)
 		if (ft_choose_dups(pipes, i))
 			return (rerror());		
 		// redirections(comand);// lo unico gordo que queda ^^
-		comands =expandall(ft_split(comand, ' '));
+		comands = expandall(ft_split(comand, ' '));
 		if (!comands)
 			return(10);//mejora esto
 		if (comands[0])
 		{
-			ft_manage_builtins(comands);
+			exit(ft_manage_builtins(comands));
 			aux_cmd = ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands));// lo de comand not found o No such file or directory? btw tiene pinta de que esta linea es demasiado larga para la norma
 			if (!aux_cmd)
 				exit(-1);//cambiar esto por lo del env?
 			ft_free_2d_arr(comands);
-			ft_execve(aux_cmd[0], aux_cmd);
-			exit(-1);//hmmmm
+			exit(ft_execve(aux_cmd[0], aux_cmd));//hmmmm
 		}
 	}
 	else
