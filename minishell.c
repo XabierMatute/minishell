@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/18 11:59:39 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:15:15 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int onlychild(char **comands)
 		exit(ft_execve(comands[0], comands));
 	ft_free_2d_arr(comands);
 	waitpid (pid, &e, 0);
-	//adde(e);
+	ft_update_error(WEXITSTATUS(e));
 }
 static int nopipes(char *comand)
 {

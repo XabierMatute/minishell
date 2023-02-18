@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/17 18:02:29 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:15:32 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,57 +51,41 @@ int	ft_choose_dups(int **pipes, int i)
 		return (ft_dup2_fds(pipes, pipes[i - 1][0], pipes[i][1]));
 }
 
+void	ex(char **comands)
+{
+	if (!comands)
+		exit(merror());
+	exit(ft_execve(comands[0], comands));
+}
+
+void	ft_child_process(int **pipes, char **comands, int i)
+{
+	if (!comands)
+		exit(merror());
+	if (ft_choose_dups(pipes, i))
+		exit (rerror());
+	// redirections(comand);// lo unico gordo que queda ^^
+	if (is_builtin(comands))
+		exit(ft_manage_builtins(comands));
+	ex(ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands)));
+	ft_free_2d_arr(comands);
+}
 
 int	ft_family_process(int **pipes, char *comand, int i)
 {
 	pid_t		pid;
-	char	**aux_cmd;
-	char	**comands;
 	
 	// printf("HOLLLLAA\n");
 
 	pid = fork();
+	if (pid < 0)
+		perror("");	
 	ft_add_child_listener();
-	
 	if (pid == 0)//yo metia todo esto en una función child process
-	{
-
-			
-		// printf("----->Son[%d]: %d\n", i, getpid());
-		if (ft_choose_dups(pipes, i))
-			return (rerror());		
-		// redirections(comand);// lo unico gordo que queda ^^
-		comands = expandall(ft_split(comand, ' '));
-		if (!comands)
-			return(10);//mejora esto
-		if (comands[0])
-		{
-			exit(ft_manage_builtins(comands));
-			aux_cmd = ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands));// lo de comand not found o No such file or directory? btw tiene pinta de que esta linea es demasiado larga para la norma
-			if (!aux_cmd)
-				exit(-1);//cambiar esto por lo del env?
-			ft_free_2d_arr(comands);
-			exit(ft_execve(aux_cmd[0], aux_cmd));//hmmmm
-		}
-	}
+		ft_child_process(pipes, expandall(ft_split(comand, ' ')), i);
 	else
 	{
-		if (pipes)
-		{
-			/* code */
-		}
 		
-		// if (!pipes)
-		// {
-		// 	printf("\nadios %i\n", waitpid(-1, NULL, 0));
-		// }
-		// else if (!pipes[i])
-		// 	printf("\nadios %i\n", waitpid(-1, NULL, 0));
-		
-
-		// dup2(STDIN_FILENO, 0);
-		// dup2(STDOUT_FILENO, 1);
-		//ft_free_cmd();
 	}
 	return (0);
 }

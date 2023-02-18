@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/15 17:40:14 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/18 13:16:03 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_execve(char *path, char **comands)
 	{
 		perror("");
 		free(env);
-		return (1);
+		return (21375);
 	}
 	free(env);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:04:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/15 13:45:43 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:17:23 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int pipes(char **comands)
 {
-	int	i ;
+	int		i;
 	int		**pipes;
+	int		ec;
 
 	if (!comands)
 		merror();
@@ -34,9 +35,10 @@ int pipes(char **comands)
 			rerror();
 	while (i--)
 	{
-			waitpid(-1, NULL, 0);
-			// printf("\nadios %i\n", waitpid(-1, NULL, 0));
+			waitpid(-1, &ec, 0);
+			ft_update_error(WEXITSTATUS(ec));
 	}
+
 	ft_free_2d_arr(comands);
 	ft_free_2d_arr(pipes);
 	return (0);
