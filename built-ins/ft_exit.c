@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 19:09:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/17 17:59:31 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/18 11:55:52 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	ft_exit(char **args)
 {
+	ft_printf("exit\n");
+	if (!args || !*args)
+		exit(0);
 	if (ft_args_lenght(args) > 1)
 	{
 		ft_printf("❌ Too many arguments\n");
 		return (1);
 	}
-	ft_printf("exit\n");
 	destroy_stack(G_cp_env);
 	exit(ft_atoi(*args));
 	return (97);
