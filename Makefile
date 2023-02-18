@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/17 17:05:40 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/18 14:13:18 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,11 +67,11 @@ OBJ := $(SRC:%.c=%.o)
 
 SANI 	:= -fsanitize=address -g3
 
-RLFLAGS := -lreadline -L /Users/$(USER)/.brew/opt/readline/lib -I /Users/$(USER)/.brew/opt/readline/include
-
 CC 		:= gcc
-CFLAGS 	:= -Wall  -Wextra  $(SANI) $(RLFLAGS)
+CFLAGS 	:= -Wall  -Wextra -I./readline -I./readline/include -I.  $(SANI) $(RLFLAGS)
 
+RLFLAGS := -L./readline -lreadline -L/usr/local/opt/readline/lib -I/usr/local/opt/readline/include
+LDLIBS := -lreadline -lncurses
 # CFLAGS 	:= -Wall -Werror -Wextra $(SANI) $(RLFLAGS)
 
 
@@ -85,7 +85,9 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	make -C libft
 	make -C ft_printf
-	$(CC) $(CFLAGS) $(OBJ) ft_printf/libftprintf.a libft/libft.a -o $(NAME)
+	make -C readline
+	$(CC) $(CFLAGS) $(OBJ) readline/libhistory.a readline/libreadline.a ft_printf/libftprintf.a libft/libft.a $(LDLIBS) -o $(NAME)
+	# $(CC) $(CFLAGS) $(OBJ) ft_printf/libftprintf.a libft/libft.a   readline/libhistory.a readline/libreadline.a -o $(NAME)
 
 clean :
 		$(RM) $(OBJ)

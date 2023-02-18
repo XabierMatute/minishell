@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/17 17:05:53 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/18 13:59:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 
 # include "./libft/libft.h"
 # include "./readline/readline.h"
+# include "./readline/history.h"
 
 char **env2;
 
