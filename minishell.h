@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/18 18:34:30 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:43:04 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <unistd.h>
 #include <curses.h>
 #include <ncurses.h>
+#include <fcntl.h>
 // #include <readline/readline.h>
 // #include <readline/history.h>
 #include <signal.h>
@@ -84,6 +85,7 @@ int	ft_args_lenght(char **args);
 int	ft_unset(char **args);
 int	ft_exit(char **args);
 int	ft_manage_builtins(char **comands);
+char *ft_getpwd();
 
 /* ------------------- MANAGE-ENV-NODES ---------------------*/
 t_stack	*ft_create_env(char **env);
@@ -129,6 +131,8 @@ char	**ft_split(char *s, char c);
 char	**liberatesl(char ***f, unsigned int p);
 char **ft_transform_env(void);
 void	ft_update_error(int	n);
+t_node *ft_getenv_variable(char *variable);
+char	*ft_get_next_line(int fd);
 
 
 
