@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:35 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/18 18:33:33 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:47:18 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,23 @@ static int	ft_check_args(char **args)
 	return (0);
 }
 
+char *ft_getpwd()
+{
+	char	*pwd;
+
+	pwd = (char *)malloc(sizeof(char) * PATH_MAX);
+	getcwd(pwd, PATH_MAX);
+	return (pwd);
+}
+
 int	ft_pwd(char **args)
 {
-	char	buff[PATH_MAX];
+	char	*pwd;
 
 	if (ft_check_args(args))
 		return (1);
-	getcwd(buff, PATH_MAX);
-	ft_printf("%s\n", buff);
+	pwd = ft_getpwd();
+	ft_printf("%s\n", pwd);
+	free(pwd);
 	return (0);
 }
