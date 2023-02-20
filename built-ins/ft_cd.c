@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/19 18:03:01 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/20 16:39:07 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	ft_go_home(char *old_pwd)
 		ft_printf("❌ HOME has gone to sleep\n");
 		return (1);
 	}
-	ft_replace_oldpwd(ft_getenv_variable("OLDPWD"), old_pwd);
-	ft_replace_pwd(ft_getenv_variable("PWD"), ft_getpwd());
+	ft_replace_oldpwd(ft_getenv_node("OLDPWD"), old_pwd);
+	ft_replace_pwd(ft_getenv_node("PWD"), ft_getpwd());
 	return (0);
 }
 
@@ -84,8 +84,8 @@ int	ft_cd(char **args)
 			free(old_pwd);
 			return (1);
 		}
-		ft_replace_oldpwd(ft_getenv_variable("OLDPWD"), old_pwd);
-		ft_replace_pwd(ft_getenv_variable("PWD"), ft_getpwd());
+		ft_replace_oldpwd(ft_getenv_node("OLDPWD"), old_pwd);
+		ft_replace_pwd(ft_getenv_node("PWD"), ft_getpwd());
 	}
 	return(0);
 }

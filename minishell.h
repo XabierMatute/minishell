@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/19 18:43:04 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/20 16:53:55 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ char	**ft_split(char *s, char c);
 char	**liberatesl(char ***f, unsigned int p);
 char **ft_transform_env(void);
 void	ft_update_error(int	n);
-t_node *ft_getenv_variable(char *variable);
+t_node *ft_getenv_node(char *variable);
 char	*ft_get_next_line(int fd);
 
 

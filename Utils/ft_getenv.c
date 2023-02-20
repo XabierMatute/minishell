@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:24:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/19 17:38:24 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/20 16:53:49 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char *ft_getenv(char *variable)
 	return (NULL);
 }
 
-t_node *ft_getenv_variable(char *variable)
+t_node *ft_getenv_node(char *variable)
 {
 	t_node	*ptr;
 
