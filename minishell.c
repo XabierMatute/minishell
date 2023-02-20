@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/18 18:37:12 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:01:51 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ static int nopipes(char *comand)
 		return(merror());
 	if (comands[0])
 	{
+		ft_add_child_listener();
 		if (is_builtin(comands))
 			ft_update_error(ft_manage_builtins(comands));
 		else
