@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/20 18:47:57 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/20 19:56:36 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ SRC :=	main.c					\
 		Utils/ft_update_error.c			\
 		redirections/ft_redirections.c	\
 		redirections/ft_here_doc.c		\
-		/redirections/redirections.c	\
+		redirections/redirections.c	\
 		Utils/ft_get_next_line.c		\
 		
 OBJ := $(SRC:%.c=%.o)

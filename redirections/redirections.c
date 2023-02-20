@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/20 18:49:41 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:58:54 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	redirecti(char *comand, char **eof, char **ir)
 		i++;
 	}
 	free(comand);
+	return (1);
 }
 
 int	redirecto(char *comand, char **or, char **orae)
@@ -60,9 +61,10 @@ int	redirecto(char *comand, char **or, char **orae)
 		i++;
 	}
 	free(comand);
+	return (1);
 }
 
-void	redirections(char *comand)
+void	makeredirections(char *comand)
 {
 	char	**eof;
 	char	**ir;
@@ -74,15 +76,15 @@ void	redirections(char *comand)
 		eof = expandall(getir_ae(comand));
 		ir = expandall(getir(comand));
 		redirecti(ft_strdup(comand), eof, ir);
-		ft_free_2d_arr(eof);
-		ft_free_2d_arr(ir);
+		ft_free_2d_arr((void **)eof);
+		ft_free_2d_arr((void **)ir);
 	}
 	if (contain(comand, '>'))
 	{
 		or = expandall(getor_ae(comand));
 		orae = expandall(getor(comand));
 		redirecto(ft_strdup(comand), or, orae);
-		ft_free_2d_arr(or);
-		ft_free_2d_arr(orae);
+		ft_free_2d_arr((void **)or);
+		ft_free_2d_arr((void **)orae);
 	}
 }
