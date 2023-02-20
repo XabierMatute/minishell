@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/20 17:39:20 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/20 18:48:18 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ char	*ft_get_next_line(int fd);
 
 
 /* ------------------- REDIRECTIONS ---------------------*/
+void	redirections(char *comand);
 int	ft_here_doc(char *eof);
 int	ft_redirect_output(char *path, int flag);
 int ft_redirect_input(char *path);
