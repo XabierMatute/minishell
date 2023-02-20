@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/20 16:53:55 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/20 17:39:20 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,10 @@ t_node *ft_getenv_node(char *variable);
 char	*ft_get_next_line(int fd);
 
 
+/* ------------------- REDIRECTIONS ---------------------*/
+int	ft_here_doc(char *eof);
+int	ft_redirect_output(char *path, int flag);
+int ft_redirect_input(char *path);
 
 
 /* ------------------- ERRORS ---------------------*/

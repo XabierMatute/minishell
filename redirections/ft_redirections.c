@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 17:34:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/19 18:40:04 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/20 17:55:06 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int ft_open(char *path, int flag)
 	int fd;
 
 	fd = open(path, O_CREAT | O_WRONLY | flag, 0660);
-	if (fd != 0)
+	if (fd <= 0)
 	{
 		perror("");
 		return (-1);
@@ -41,8 +41,6 @@ int	ft_redirect_output(char *path, int flag)
 {
 	int fd;
 
-	if (ft_check_access(path))
-		return (1);
 	fd = ft_open(path, flag);
 	if (fd < 0)
 		return(1);
