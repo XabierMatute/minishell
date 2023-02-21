@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:52:46 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/19 18:45:07 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/21 19:37:38 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_check_eof(char *entry, char *eof)
 	char	*aux;
 
 	aux = ft_substr(entry, 0, ft_strlen(entry) - 1);
-	printf("%s", aux);
 	if (*aux == '\0')
 		return (free(aux), 1);
 	if (!ft_strncmp(aux, eof, ft_strlen(aux)))
@@ -26,13 +25,15 @@ int	ft_check_eof(char *entry, char *eof)
 	return (1);
 }
 
-void	ft_save_entry(int fd, char *eof)
+int	ft_save_entry(int fd, char *eof)
 {
 	char	*entry;
 
 	while (1)
 	{
 		entry = ft_get_next_line(0);
+		if (!entry)
+			return (1);
 		if (!ft_check_eof(entry, eof))
 		{
 			free(entry);
@@ -42,6 +43,7 @@ void	ft_save_entry(int fd, char *eof)
 		write(fd, "\n", 1);
 		free(entry);
 	}
+	return (0);
 }
 
 int	ft_here_doc(char *eof)
@@ -50,7 +52,8 @@ int	ft_here_doc(char *eof)
 
 	if (ft_pipe(pipe))
 		return (1);
-	ft_save_entry(pipe[1], eof);
+	if (ft_save_entry(pipe[1], eof))
+		return (1);
 	if (ft_dup2(pipe[0], STDIN_FILENO))
 		return (1);
 	if (ft_close(pipe[0]) || ft_close(pipe[1]))
