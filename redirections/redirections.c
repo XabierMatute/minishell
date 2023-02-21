@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/21 17:45:59 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:10:13 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ int	redirecti(char *comand, char **eof, char **ir)
 	{
 		if (comand[i] == '<' && comand[i + 1] != '<')
 		{
-			ft_here_doc(*ir);
+			
+			ft_redirect_input(*ir);
 			ir++;
 		}
 		else if (comand[i] == '<' && comand[i + 1] == '<')
 		{
-			ft_redirect_input(*eof);
+			ft_here_doc(*eof);
 			eof++;
 			i++;
 		}
 		i++;
 	}
-	free(comand);
 	return (1);
 }
 
@@ -49,18 +49,20 @@ int	redirecto(char *comand, char **or, char **orae)
 	{
 		if (comand[i] == '>' && comand[i + 1] != '>')
 		{
+			printf("> %s\n", *or);
 			ft_redirect_output(*or, O_TRUNC);
 			or++;
 		}
-		else if (comand[i] == '<' && comand[i + 1] == '<')
+		else if (comand[i] == '>' && comand[i + 1] == '>')
 		{
+			printf(">> %s\n", *orae);
+
 			ft_redirect_output(*orae, O_APPEND);
 			orae++;
 			i++;
 		}
 		i++;
 	}
-	free(comand);
 	return (1);
 }
 
@@ -72,9 +74,12 @@ void	makeredirections(char *comand)
 	char	**orae;
 	char	*aux;
 
+	printf("a redireccionar %s\n", comand);
 	aux = ft_strdup(comand);
 	if (contain(comand, '<'))
 	{
+	printf("imput\n");
+
 		eof = expandall(getir_ae(comand));
 		ir = expandall(getir(comand));
 		redirecti(aux, eof, ir);
@@ -83,12 +88,15 @@ void	makeredirections(char *comand)
 	}
 	if (contain(comand, '>'))
 	{
-		or = expandall(getor_ae(comand));
-		orae = expandall(getor(comand));
+	printf("output\n");
+		orae = expandall(getor_ae(comand));
+		
+		or = expandall(getor(comand));
 		redirecto(aux, or, orae);
 		ft_free_2d_arr((void **)or);
 		ft_free_2d_arr((void **)orae);
 	}
+	printf("redireccionado %s\n", comand);
 	if (aux)
 		free(aux);
 }
