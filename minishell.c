@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/20 13:01:51 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:05:07 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,13 @@ static void	processline(char *str)
 int	minishell(void)
 {
 	char	*str;
+	// int		stdio[2];
 
+	// getstdio(stdio);
 	str = NULL;
 	while (G_cp_env)
 	{
+		// resetstdio(stdio);
 		if(ft_add_father_listener())
 			serror();
 		processline(readline("minishell: "));

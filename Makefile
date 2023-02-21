@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:33:39 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/21 16:31:43 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/21 17:11:44 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,8 +99,8 @@ SRC :=	main.c					\
 		Utils/ft_update_error.c			\
 		redirections/ft_redirections.c	\
 		redirections/ft_here_doc.c		\
+		redirections/redirections.c	\
 		Utils/ft_get_next_line.c		\
-#		/redirections/redirections.c	\
 		
 WHITE = \033[0;37m
 RED = \033[0;31m
