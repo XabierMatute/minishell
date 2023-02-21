@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/20 19:58:22 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:31:35 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,9 @@ void	makeredirections(char *comand);
 int	ft_here_doc(char *eof);
 int	ft_redirect_output(char *path, int flag);
 int ft_redirect_input(char *path);
+
+int	*getstdio(int	stdio[2]);
+int	*resetstdio(int	stdio[2]);
 
 char	**getir_ae(char *s);
 char	**getir(char *s);
