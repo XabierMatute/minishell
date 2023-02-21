@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:02:50 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/15 17:52:15 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/20 20:07:29 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t e36len(char *s)
 		return (1);
 	
 	l = 0;
-	while (s[l] && ft_isalnum(s[l]))
+	while (s[l] && (ft_isalnum(s[l]) || s[l] == '_'))
 		l++;
 	return (l);
 }

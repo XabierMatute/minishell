@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 17:34:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/20 17:55:06 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/20 19:39:01 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int ft_open2(char *path)
 	int fd;
 
 	fd = open(path, O_RDONLY);
-	if (fd != 0)
+	if (fd <= 0)
 	{
 		perror("");
 		return (-1);
