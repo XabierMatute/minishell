@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:35:27 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/21 17:35:28 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/21 18:45:00 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,6 +104,7 @@ SRC :=	main.c					\
 		redirections/getstdio.c	\
 		redirections/resetstdio.c	\
 		Utils/ft_get_next_line.c		\
+		Utils/ft_strisdigit.c		\
 		
 WHITE = \033[0;37m
 RED = \033[0;31m
@@ -113,9 +114,9 @@ MAGENTA = \033[0;35m
 
 OBJ := $(SRC:%.c=%.o)
 
-SANI 	:= -fsanitize=address -g3
+SANI 	:= -fsanitize=address
 
-CC 		:= gcc
+CC 		:= gcc -g3
 CFLAGS 	:= -Wall  -Wextra -Werror  -I./readline -I./readline/include -I.  $(SANI) $(RLFLAGS)
 
 # RLFLAGS := -L./readline -lreadline -L/usr/local/opt/readline/lib -I/usr/local/opt/readline/include
