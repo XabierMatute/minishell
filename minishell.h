@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/21 17:31:35 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:44:37 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ char **ft_transform_env(void);
 void	ft_update_error(int	n);
 t_node *ft_getenv_node(char *variable);
 char	*ft_get_next_line(int fd);
+int	ft_strisdigit(char *str);
 
 
 /* ------------------- REDIRECTIONS ---------------------*/

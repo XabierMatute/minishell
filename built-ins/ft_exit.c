@@ -6,22 +6,49 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 19:09:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/18 11:55:52 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/21 19:25:39 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../minishell.h"
+
+int	inrange(char *s)
+{
+	if (!ft_strncmp("-2147483648", s, 12))
+		return (1);
+	if (*s == '-' || *s == '+')
+		s++;
+	if (ft_wlen(s, ' ') < 10)
+		return (1);
+	if (ft_wlen(s, ' ')> 10)
+		return (0);
+	if (ft_strncmp("2147483647", s, 10) < 0)
+		return (0);
+	return (1);
+}
+
+static int	ft_check_args(char **args)
+{
+
+	if (!ft_strisdigit(args[0]))
+		ft_printf("exit: %s: numeric argument required\n", args[0]);
+	else if (ft_args_lenght(args) > 1)
+	{
+		ft_printf("❌ Too many arguments\n");
+		return (1);
+	}
+	else if (!inrange(args[0]))
+		ft_printf("exit: %s: numeric argument required\n", args[0]);
+	return (0);
+}
 
 int	ft_exit(char **args)
 {
 	ft_printf("exit\n");
 	if (!args || !*args)
 		exit(0);
-	if (ft_args_lenght(args) > 1)
-	{
-		ft_printf("❌ Too many arguments\n");
+	if (ft_check_args(args))
 		return (1);
-	}
 	destroy_stack(G_cp_env);
 	exit(ft_atoi(*args));
 	return (97);
