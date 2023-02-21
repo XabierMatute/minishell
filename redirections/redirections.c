@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/21 19:40:40 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/21 19:46:59 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ void	makeredirections(char *comand)
 	aux = ft_strdup(comand);
 	if (contain(comand, '<'))
 	{
-	printf("imput\n");
-
 		eof = expandall(getir_ae(comand));
 		ir = expandall(getir(comand));
 		redirecti(aux, eof, ir);
