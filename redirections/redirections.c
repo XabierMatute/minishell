@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/20 19:58:54 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:45:59 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,14 @@ void	makeredirections(char *comand)
 	char	**ir;
 	char	**or;
 	char	**orae;
+	char	*aux;
 
+	aux = ft_strdup(comand);
 	if (contain(comand, '<'))
 	{
 		eof = expandall(getir_ae(comand));
 		ir = expandall(getir(comand));
-		redirecti(ft_strdup(comand), eof, ir);
+		redirecti(aux, eof, ir);
 		ft_free_2d_arr((void **)eof);
 		ft_free_2d_arr((void **)ir);
 	}
@@ -83,8 +85,10 @@ void	makeredirections(char *comand)
 	{
 		or = expandall(getor_ae(comand));
 		orae = expandall(getor(comand));
-		redirecto(ft_strdup(comand), or, orae);
+		redirecto(aux, or, orae);
 		ft_free_2d_arr((void **)or);
 		ft_free_2d_arr((void **)orae);
 	}
+	if (aux)
+		free(aux);
 }
