@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/21 18:10:13 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/21 19:40:40 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	redirecti(char *comand, char **eof, char **ir)
 	{
 		if (comand[i] == '<' && comand[i + 1] != '<')
 		{
-			
 			ft_redirect_input(*ir);
 			ir++;
 		}
@@ -49,14 +48,11 @@ int	redirecto(char *comand, char **or, char **orae)
 	{
 		if (comand[i] == '>' && comand[i + 1] != '>')
 		{
-			printf("> %s\n", *or);
 			ft_redirect_output(*or, O_TRUNC);
 			or++;
 		}
 		else if (comand[i] == '>' && comand[i + 1] == '>')
 		{
-			printf(">> %s\n", *orae);
-
 			ft_redirect_output(*orae, O_APPEND);
 			orae++;
 			i++;
@@ -74,7 +70,6 @@ void	makeredirections(char *comand)
 	char	**orae;
 	char	*aux;
 
-	printf("a redireccionar %s\n", comand);
 	aux = ft_strdup(comand);
 	if (contain(comand, '<'))
 	{
@@ -88,7 +83,6 @@ void	makeredirections(char *comand)
 	}
 	if (contain(comand, '>'))
 	{
-	printf("output\n");
 		orae = expandall(getor_ae(comand));
 		
 		or = expandall(getor(comand));
@@ -96,7 +90,6 @@ void	makeredirections(char *comand)
 		ft_free_2d_arr((void **)or);
 		ft_free_2d_arr((void **)orae);
 	}
-	printf("redireccionado %s\n", comand);
 	if (aux)
 		free(aux);
 }
