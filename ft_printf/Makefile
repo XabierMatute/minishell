@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 18:25:48 by xmatute-          #+#    #+#              #
-#    Updated: 2022/09/30 12:54:55 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/02/21 16:05:31 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,15 +41,12 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-	echo "Library compiled"
 
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
-	echo ".o files removed"
 
 fclean: clean
 	rm -f $(NAME)
-	echo "Library removed"
 
 re: fclean $(NAME)
 
