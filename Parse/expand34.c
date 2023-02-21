@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:13:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/15 17:52:34 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/21 18:42:53 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ char *expand3634(char *s)
 		return(ft_strdup(""));
 	l = e36len(s);
 	// printf("l39 = %i\n", l);
-
+	if (!l)
+			return(ft_strjoinfree(ft_strdup("$"), expand34(s)));
 	v = ft_calloc(l + 1, sizeof(char));
 	if (!v)
 		return(0);//printear error de memoria

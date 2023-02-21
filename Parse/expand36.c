@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:02:50 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/20 20:07:29 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:43:38 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,13 @@ char *expand36(char *s)
 	// printf("s36 = %s\n", s);
 	if (!s)
 		return(0);
+	l = e36len(s);
+	if (!l)
+		return(ft_strjoinfree(ft_strdup("$"), expand(s)));
 	if (!*s)
 		return(ft_strdup(""));
-	l = e36len(s);
+	
+	
 	// printf("l39 = %i\n", l);
 
 	v = ft_calloc(l + 1, sizeof(char));
