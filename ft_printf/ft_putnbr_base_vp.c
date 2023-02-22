@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 14:31:48 by xmatute-          #+#    #+#             */
-/*   Updated: 2022/09/30 13:23:40 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:23:29 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,6 @@ void	ft_putnbr_base_vp(unsigned long long nbr, char *base)
 	b = ft_strlen(base);
 	if ((b > 1) && (letrasrepes(base) == 0))
 	{
-		if (nbr < 0)
-		{
-			write(1, "-", 1);
-			nbr = nbr * -1;
-		}
 		recursive(nbr, base, b);
 	}
 }
