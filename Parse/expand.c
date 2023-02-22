@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:23:19 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/21 18:27:30 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:06:02 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ char	**expandall(char **ss)
 		return (0);
 	e = malloc(sizeof(char *) * (ft_args_lenght(ss) + 1));
 	if (!e)
+	{
+		ft_free_2d_arr((void **)ss);
 		return (0);
+	}
 	
 	i = 0;
 	while (ss[i])
@@ -67,11 +70,13 @@ char	**expandall(char **ss)
 		if	(!e[i])
 		{
 			ft_free_2d_arr((void **)e);
+			ft_free_2d_arr((void **)ss);
 			return (0);
 		}
 		i++;
 	}
 	e[i] = 0;
+	ft_free_2d_arr((void **)ss);
 	return (e);	
 }//en general cubrete de errores de memoria
 // int main(int argc, char const *argv[])

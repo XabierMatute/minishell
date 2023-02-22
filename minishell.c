@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/22 15:08:06 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:27:28 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,8 @@ static char **ft_copy(char **comands, char *path, int comands_len)//esto esta ch
 	i = 0;
 	while(comands[++i])
 	{
-		if (ft_strncmp(comands[i], comands[0], ft_strlen(comands[0])))
-		{
-			output[j] = ft_strdup(comands[i]);
-			j++;
-		}
+		output[j] = ft_strdup(comands[i]);
+		j++;
 	}
 	free(path);
 	output[i] = NULL;
@@ -71,8 +68,8 @@ static int nopipes(char *comand)
 			ft_update_error(ft_manage_builtins(comands));
 		else
 			onlychild(ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands)));
-		ft_free_2d_arr((void **)comands);
 	}
+	ft_free_2d_arr((void **)comands);
 	return(0);
 }
 

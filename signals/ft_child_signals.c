@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:30:42 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/09 18:04:27 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/22 17:38:53 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int ft_add_child_listener()
 {
 	type_sa sa;
 
+	sa.sa_sigaction = 0;
+	sa.sa_mask = 0;
 	sa.sa_handler = ft_manage_signals;
 	sa.sa_flags = SA_RESTART;
 	ft_manage_terminal();
