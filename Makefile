@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:35:27 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/21 18:45:00 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/22 10:42:49 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,11 +129,18 @@ RM 		:= rm -rf
 
 val 	:=  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
+RLMAKE := readline/Makefile
+
 .SILENT:
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+$(RLMAKE) :
+	cd ./readline
+	./configure
+	cd ..
+	
+$(NAME) : $(OBJ) $(RLMAKE)
 	make -C libft
 	@echo "Libft compiled"
 	make -C ft_printf
