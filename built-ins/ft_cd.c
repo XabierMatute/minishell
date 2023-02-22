@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/20 16:39:07 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/22 19:54:25 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int		ft_check_cd_args(char **args)
 
 void	ft_replace_oldpwd(t_node *node, char *new_old_pwd)
 {
+	if (!node)
+		return ;
 	if (ft_strncmp(node->variable + 7, new_old_pwd, ft_strlen(node->variable)))
 	{
 		free(node->variable);
@@ -48,6 +50,8 @@ void	ft_replace_oldpwd(t_node *node, char *new_old_pwd)
 
 void	ft_replace_pwd(t_node *node, char *new_pwd)
 {
+	if (!node)
+		return ;
 	if (ft_strncmp(node->variable + 4, new_pwd, ft_strlen(node->variable)))
 	{
 		free(node->variable);
