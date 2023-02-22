@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/21 18:44:37 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/22 15:12:58 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include <curses.h>
 #include <ncurses.h>
 #include <fcntl.h>
+#include <sys/wait.h>
 // #include <readline/readline.h>
 // #include <readline/history.h>
 #include <signal.h>
