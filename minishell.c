@@ -6,36 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/22 18:27:28 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/23 19:46:24 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "minishell.h"
 
-static char **ft_copy(char **comands, char *path, int comands_len)//esto esta chapucilla
-{
-	char	**output;
-	int		i;
-	int		j;
-
-	if (!path)
-		return (NULL);
-	output = (char **)malloc(sizeof(char *) * (comands_len + 1));
-	if (!output)
-		return (NULL);
-	output[0] = ft_strdup(path);
-	j = 1;
-	i = 0;
-	while(comands[++i])
-	{
-		output[j] = ft_strdup(comands[i]);
-		j++;
-	}
-	free(path);
-	output[i] = NULL;
-	return (output);
-}
 static int onlychild(char **comands)
 {
 	pid_t		pid;
