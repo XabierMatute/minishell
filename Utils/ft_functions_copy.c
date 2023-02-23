@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/23 16:47:35 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/23 16:58:22 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ int	ft_execve(char *path, char **comands)
 	res = execve(path, comands, env);
 	if (res  == -1)//hacer esto mejor
 	{
-		printf("😥 Comand not found\n");
+		if (path[0] == '.' || path[0] == '/')
+			perror("");
+		else
+			printf("😥 %s: Command not found\n", path);
 		ft_free_2d_arr((void **)comands);
 		destroy_stack(G_cp_env);
 		ft_free_2d_arr((void **)env);
