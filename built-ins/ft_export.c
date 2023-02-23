@@ -6,12 +6,12 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:09:40 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/22 20:28:25 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/23 16:36:56 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-static int ft_check_variable_name(char *variable)
+int ft_check_variable_name(char *variable)
 {
 	int	i;
 

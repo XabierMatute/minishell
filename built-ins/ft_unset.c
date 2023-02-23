@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:31:33 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/17 17:47:50 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/23 16:37:49 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,6 @@ void	ft_delete_variable(t_stack *cp_env, char *variable)
 	ft_pop(cp_env, pos);
 }
 
-static int	ft_check_variable(char *variable)
-{
-	if (!ft_strisalnum(variable))
-	{
-		ft_printf("❌ unset: '%s': not a valid identifier\n", variable);
-		return (1);
-	}
-	return (0);
-}
-
 int	ft_unset(char **args)
 {
 	int	i;
@@ -58,7 +48,7 @@ int	ft_unset(char **args)
 	i = -1;
 	while (args[++i])
 	{
-		if (!ft_check_variable(args[i]))
+		if (!ft_check_variable_name(args[i]))
 			ft_delete_variable(G_cp_env, args[i]);
 		else
 			output = 1;
