@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:35:27 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/23 19:53:05 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/24 16:57:33 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,6 +106,7 @@ SRC :=	main.c					\
 		Utils/ft_get_next_line.c		\
 		Utils/ft_strisdigit.c		\
 		Pipes/ft_copy.c				\
+		Utils/ft_execve.c			\
 		
 WHITE = \033[0;37m
 RED = \033[0;31m

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:49:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/23 18:25:53 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/24 17:15:36 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char *ft_find_cmd(char *cmd)
 	char	*path;
 	char	*folder;
 
+	if (!ft_strncmp(cmd, ".", 1) || !ft_strncmp(cmd, "/", 1))
+		return (ft_strdup(cmd));
 	path = ft_getenv("PATH"); 
 	if (!path || !cmd)
 		return (ft_strdup(cmd));
