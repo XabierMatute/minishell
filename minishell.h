@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/24 16:57:08 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/24 17:48:29 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,8 @@ t_node *ft_getenv_node(char *variable);
 char	*ft_get_next_line(int fd);
 int	ft_strisdigit(char *str);
 int	ft_execve(char *path, char **comands);
+
+int	printexport(char	*s);
 
 
 /* ------------------- REDIRECTIONS ---------------------*/
