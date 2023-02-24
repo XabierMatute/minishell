@@ -6,17 +6,15 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/22 19:54:25 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/23 17:45:47 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../minishell.h"
 
-/*
-int	ft_check_access(char *path)
+int ft_chdir(char *path)
 {
-	printf("---->%s\n", path);
-	if (access(path, F_OK | R_OK))
+	if (chdir(path) != 0)
 	{
 		ft_printf("❌ %s: ", path);
 		perror("");
@@ -24,17 +22,6 @@ int	ft_check_access(char *path)
 	}
 	return (0);
 }
-
-int		ft_check_cd_args(char **args)
-{
-	int	lenght;
-
-	lenght =ft_args_lenght(args);
-	if (lenght == 0)
-		return (1);
-	return (0);
-}
-*/
 
 void	ft_replace_oldpwd(t_node *node, char *new_old_pwd)
 {
@@ -60,13 +47,15 @@ void	ft_replace_pwd(t_node *node, char *new_pwd)
 	free(new_pwd);
 }
 
-int	ft_go_home(char *old_pwd)
+int	ft_go_to(char *old_pwd, char *path)
 {
-	if (chdir(ft_getenv("HOME")) != 0)
+	if (chdir(ft_getenv(path)) != 0)
 	{
-		ft_printf("❌ HOME has gone to sleep\n");
+		ft_printf("❌ %s has gone to sleep\n", path);
 		return (1);
 	}
+	if (!ft_strncmp(path, "OLDPWD\0", 7))
+		ft_pwd(0);
 	ft_replace_oldpwd(ft_getenv_node("OLDPWD"), old_pwd);
 	ft_replace_pwd(ft_getenv_node("PWD"), ft_getpwd());
 	return (0);
@@ -77,17 +66,14 @@ int	ft_cd(char **args)
 	char	*old_pwd;
 
 	old_pwd = ft_getpwd();
-	if (!*args)
-		return (ft_go_home(old_pwd));
+	if (!*args || !ft_strncmp(*args,  "~\0", 2))
+		return (ft_go_to(old_pwd, "HOME"));
+	else if (!ft_strncmp(*args, "-\0", 2))
+		return (ft_go_to(old_pwd, "OLDPWD"));
 	else
 	{
-		if (chdir(args[0]) != 0)
-		{
-			ft_printf("❌ %s: ", args[0]);
-			perror("");
-			free(old_pwd);
+		if (ft_chdir(*args))
 			return (1);
-		}
 		ft_replace_oldpwd(ft_getenv_node("OLDPWD"), old_pwd);
 		ft_replace_pwd(ft_getenv_node("PWD"), ft_getpwd());
 	}

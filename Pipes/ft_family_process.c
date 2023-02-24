@@ -6,38 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/21 17:49:37 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:46:28 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-static char **ft_copy(char **comands, char *path, int comands_len)
-{
-	char	**output;
-	int		i;
-	int		j;
-
-	if (!path)
-		return (NULL);
-	output = (char **)malloc(sizeof(char *) * (comands_len + 1));
-	if (!output)
-		return (NULL);
-	output[0] = ft_strdup(path);
-	j = 1;
-	i = 0;
-	while(comands[++i])
-	{
-		if (ft_strncmp(comands[i], comands[0], ft_strlen(comands[0])))
-		{
-			output[j] = ft_strdup(comands[i]);
-			j++;
-		}
-	}
-	free(path);
-	output[i] = NULL;
-	return (output);
-}
 
 int	ft_choose_dups(int **pipes, int i)
 {

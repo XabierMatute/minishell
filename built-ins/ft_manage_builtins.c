@@ -16,38 +16,38 @@
 
 int	is_builtin(char **comands)
 {
-	if (!strncmp(comands[0], "exit", ft_strlen(comands[0])))
+	if (!ft_strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
 		return (1);
-	if (!strncmp(comands[0], "echo", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "cd\0", 3))
 		return (1);
-	if (!strncmp(comands[0], "cd", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "pwd\0", 4))
 		return (1);
-	if (!strncmp(comands[0], "pwd", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "export\0", 7))
 		return (1);
-	if (!strncmp(comands[0], "export", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "unset\0", 6))
 		return (1);
-	if (!strncmp(comands[0], "unset", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "env\0", 4))
 		return (1);
-	if (!strncmp(comands[0], "env", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "exit\0", 5))
 		return (1);
 	return (0);
 }
 
 int	ft_manage_builtins(char **comands)//apañar lo de como le llega la entrada
 {
-	if (!strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
+	if (!ft_strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
 		return (ft_echo(comands + 1));
-	else if (!strncmp(comands[0], "cd", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "cd\0", 3))
 		return (ft_cd(comands + 1));
-	else if (!strncmp(comands[0], "pwd", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "pwd\0", 4))
 		return (ft_pwd(comands + 1));
-	else if (!strncmp(comands[0], "export", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "export\0", 7))
 		return (ft_export(comands + 1));
-	else if (!strncmp(comands[0], "unset", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "unset\0", 6))
 		return (ft_unset(comands + 1));
-	else if (!strncmp(comands[0], "env", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "env\0", 4))
 		return (ft_env(comands + 1));
-	else if (!strncmp(comands[0], "exit", ft_strlen(comands[0])))
+	else if (!ft_strncmp(comands[0], "exit\0", 5))
 		return (ft_exit(comands + 1));
 	return (0);
 }

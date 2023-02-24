@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/23 16:58:22 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:08:39 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_execve(char *path, char **comands)
 		ft_free_2d_arr((void **)comands);
 		destroy_stack(G_cp_env);
 		ft_free_2d_arr((void **)env);
-		return (-1);
+		return (127);
 	}
 	ft_free_2d_arr((void **)env);
 	return (0);
