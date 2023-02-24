@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_redirections.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 17:34:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/20 19:39:01 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/24 18:09:03 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ int	ft_redirect_output(char *path, int flag)
 
 	fd = ft_open(path, flag);
 	if (fd < 0)
+	{
+		ft_close(STDOUT_FILENO);
 		return(1);
+	}
 	if (ft_dup2(fd, STDOUT_FILENO))
 		return (1);
 	if (ft_close(fd))
