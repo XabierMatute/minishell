@@ -16,7 +16,9 @@
 
 int	is_builtin(char **comands)
 {
-	if (!ft_strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
+	if (!*comands)
+		return (1);
+	else if (!ft_strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
 		return (1);
 	else if (!ft_strncmp(comands[0], "cd\0", 3))
 		return (1);
@@ -35,7 +37,9 @@ int	is_builtin(char **comands)
 
 int	ft_manage_builtins(char **comands)//apañar lo de como le llega la entrada
 {
-	if (!ft_strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
+	if (!*comands)
+		return (1);
+	else if (!ft_strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
 		return (ft_echo(comands + 1));
 	else if (!ft_strncmp(comands[0], "cd\0", 3))
 		return (ft_cd(comands + 1));
