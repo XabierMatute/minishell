@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 19:06:13 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/22 20:27:05 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/24 17:52:04 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int ft_env(char **args)
 			ptr = G_cp_env->peek;
 			while (ptr)
 			{
-				if (ft_strncmp(ptr->variable, "?" , 1))
+				if (ft_strncmp(ptr->variable, "?" , 1) && contain(ptr->variable, '='))
 					ft_printf("%s\n", ptr->variable);
 				ptr = ptr->next;
 			}
@@ -58,7 +58,7 @@ int ft_print_export_env()
 				if (ft_strncmp(ptr->variable, "?" , 1))
 				{
 					ft_printf("declare -x ");
-					ft_printf("%s\n", ptr->variable);
+					printexport(ptr->variable);
 				}
 				ptr = ptr->next;
 			}

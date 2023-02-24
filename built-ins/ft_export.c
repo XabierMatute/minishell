@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:09:40 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/23 16:44:13 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/24 16:45:12 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,7 @@ static int	ft_check_variable(char *variable)
 	int equal_pos;
 
 	equal_pos = ft_strchr(variable, '=') - variable;
-	if (equal_pos < 0)
-	{
-		ft_printf("❌ export: Don't fuck us and use a '=' to export a variable\n");
-		return (1);
-	}
-	else if (equal_pos == 0 || ft_check_variable_name(variable))
+	if (equal_pos == 0 || ft_check_variable_name(variable))
 	{
 		ft_printf("❌ export: '%s': not a variable identifier\n", variable);
 		return (1);
