@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 19:06:13 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/24 17:52:04 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/28 16:53:55 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static int	ft_check_args(char **args)
 	return (0);
 }
 
-int ft_env(char **args)
+int	ft_env(char **args)
 {
-	t_node *ptr;
+	t_node	*ptr;
 
 	if (ft_check_args(args))
 		return (42);
@@ -35,7 +35,8 @@ int ft_env(char **args)
 			ptr = G_cp_env->peek;
 			while (ptr)
 			{
-				if (ft_strncmp(ptr->variable, "?" , 1) && contain(ptr->variable, '='))
+				if (ft_strncmp(ptr->variable, "?", 1) && \
+					contain(ptr->variable, '='))
 					ft_printf("%s\n", ptr->variable);
 				ptr = ptr->next;
 			}
@@ -44,9 +45,9 @@ int ft_env(char **args)
 	return (0);
 }
 
-int ft_print_export_env()
+int	ft_print_export_env(void)
 {
-	t_node *ptr;
+	t_node	*ptr;
 
 	if (G_cp_env->peek)
 	{
@@ -55,7 +56,7 @@ int ft_print_export_env()
 			ptr = G_cp_env->peek;
 			while (ptr)
 			{
-				if (ft_strncmp(ptr->variable, "?" , 1))
+				if (ft_strncmp(ptr->variable, "?", 1))
 				{
 					ft_printf("declare -x ");
 					printexport(ptr->variable);
@@ -66,4 +67,3 @@ int ft_print_export_env()
 	}
 	return (0);
 }
-
