@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 19:09:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/21 19:25:39 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/28 16:55:02 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	inrange(char *s)
 		s++;
 	if (ft_wlen(s, ' ') < 10)
 		return (1);
-	if (ft_wlen(s, ' ')> 10)
+	if (ft_wlen(s, ' ') > 10)
 		return (0);
 	if (ft_strncmp("2147483647", s, 10) < 0)
 		return (0);
@@ -29,7 +29,6 @@ int	inrange(char *s)
 
 static int	ft_check_args(char **args)
 {
-
 	if (!ft_strisdigit(args[0]))
 		ft_printf("exit: %s: numeric argument required\n", args[0]);
 	else if (ft_args_lenght(args) > 1)
