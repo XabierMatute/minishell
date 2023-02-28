@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 17:23:49 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/13 20:27:29 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:45:54 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*ft_create_env(char **env)
 
 	if (!env)
 		return (NULL);
-	G_cp_env = ft_create_stack(); 
+	G_cp_env = ft_create_stack();
 	if (!G_cp_env)
 		return (NULL);
 	ft_push(G_cp_env, ft_strdup("?=0"));
