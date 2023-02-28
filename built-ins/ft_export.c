@@ -6,12 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:09:40 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/24 16:45:12 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/28 16:56:19 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-int ft_check_variable_name(char *variable)
+
+int	ft_check_variable_name(char *variable)
 {
 	int	i;
 
@@ -26,7 +27,7 @@ int ft_check_variable_name(char *variable)
 
 static int	ft_check_variable(char *variable)
 {
-	int equal_pos;
+	int	equal_pos;
 
 	equal_pos = ft_strchr(variable, '=') - variable;
 	if (equal_pos == 0 || ft_check_variable_name(variable))
