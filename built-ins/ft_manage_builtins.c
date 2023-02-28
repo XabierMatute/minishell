@@ -6,9 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 16:33:20 by jperez            #+#    #+#             */
-
-/*   Updated: 2023/02/15 18:06:08 by jperez           ###   ########.fr       */
-/*   Updated: 2023/02/16 16:09:40 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:58:43 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +16,7 @@ int	is_builtin(char **comands)
 {
 	if (!*comands)
 		return (1);
-	else if (!ft_strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
+	else if (!ft_strncmp(comands[0], "echo\0", 5))
 		return (1);
 	else if (!ft_strncmp(comands[0], "cd\0", 3))
 		return (1);
@@ -35,11 +33,11 @@ int	is_builtin(char **comands)
 	return (0);
 }
 
-int	ft_manage_builtins(char **comands)//apañar lo de como le llega la entrada
+int	ft_manage_builtins(char **comands)
 {
 	if (!*comands)
 		return (1);
-	else if (!ft_strncmp(comands[0], "echo\0", 5))//probar a poner echooooo
+	else if (!ft_strncmp(comands[0], "echo\0", 5))
 		return (ft_echo(comands + 1));
 	else if (!ft_strncmp(comands[0], "cd\0", 3))
 		return (ft_cd(comands + 1));
