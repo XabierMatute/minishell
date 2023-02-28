@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 17:20:48 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/01 19:11:11 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/28 16:59:54 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	ft_push(t_stack *stack, char *variable)
 		stack->peek = node;
 	stack->len++;
 }
-
 
 void	ft_pop(t_stack *stack, int index)
 {
