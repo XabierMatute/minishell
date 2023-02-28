@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:15:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/23 17:45:47 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/28 16:43:20 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../minishell.h"
 
-int ft_chdir(char *path)
+int	ft_chdir(char *path)
 {
 	if (chdir(path) != 0)
 	{
@@ -66,7 +66,7 @@ int	ft_cd(char **args)
 	char	*old_pwd;
 
 	old_pwd = ft_getpwd();
-	if (!*args || !ft_strncmp(*args,  "~\0", 2))
+	if (!*args || !ft_strncmp(*args, "~\0", 2))
 		return (ft_go_to(old_pwd, "HOME"));
 	else if (!ft_strncmp(*args, "-\0", 2))
 		return (ft_go_to(old_pwd, "OLDPWD"));
@@ -77,5 +77,5 @@ int	ft_cd(char **args)
 		ft_replace_oldpwd(ft_getenv_node("OLDPWD"), old_pwd);
 		ft_replace_pwd(ft_getenv_node("PWD"), ft_getpwd());
 	}
-	return(0);
+	return (0);
 }
