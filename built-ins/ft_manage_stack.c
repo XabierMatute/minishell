@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 17:17:26 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/22 12:26:42 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:00:45 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	destroy_stack(t_stack *stack)
 	while (stack->peek != NULL)
 		ft_pop(stack, 0);
 	free(stack);
-	G_cp_env = NULL;// o asi o cambiar el imput a **stack
+	G_cp_env = NULL;
 }
 
 t_node	*ft_create_node(char *_variable)
