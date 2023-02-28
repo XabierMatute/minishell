@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:31:33 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/23 16:37:49 by jperez           ###   ########.fr       */
+/*   Updated: 2023/02/28 17:02:50 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_find_variable(t_stack *cp_env, char *variable, int lenght)
 {
 	int		i;
-	t_node *ptr;
+	t_node	*ptr;
 
 	i = 0;
 	ptr = cp_env->peek;
