@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:35:27 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/24 17:52:45 by jperez           ###   ########.fr        #
+#    Updated: 2023/02/28 16:40:13 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,8 +139,8 @@ RLMAKE := readline/Makefile
 all : $(NAME)
 
 $(RLMAKE) :
-	cd ./readline
-	./configure
+	cd ./readline;\
+		./configure;\
 	cd ..
 	
 $(NAME) : $(OBJ) $(RLMAKE)
