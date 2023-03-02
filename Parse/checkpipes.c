@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:06:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/11 19:25:30 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/02 12:18:01 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,14 @@ static int	first(char *s)
 	if (*s == '|')
 	{
 		ft_printf("❌Error: el pipe no puede ir al principio\n");
-		return(1);
-
+		return (1);
 	}
 	return (0);
 }
 
 static int	last(char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
@@ -40,21 +39,21 @@ static int	last(char *s)
 	if (s[i] == '|')
 	{
 		ft_printf("😞Error: no interpreto el pipe al final\n");
-		return(1);
+		return (1);
 	}
 	return (0);
 }
 
 static int	alone(char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
 	{
 		while (s[i] != '|' && s[i])
 		{
-			i++;
+			i += 1 + ignoreq(s + i) - (s + i);
 		}
 		if (s[i])
 		{
@@ -67,7 +66,7 @@ static int	alone(char *s)
 		if (s[i] == '|' && s[i])
 		{
 			ft_printf("💀Error: no pongas mas de un pipe seguido por favor\n");
-			return(0);
+			return (0);
 		}
 	}
 	return (1);
@@ -75,7 +74,7 @@ static int	alone(char *s)
 
 int	checkpipes(char *s)
 {
-		return (!first(s) &&
-				!last(s) &&
-				alone(s));
+	return (!first(s) &&
+			!last(s) &&
+			alone(s));
 }
