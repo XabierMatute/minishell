@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:52:46 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/21 19:56:56 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/02 18:59:50 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_save_entry(int fd, char *eof)
 
 	while (1)
 	{
-		entry = ft_get_next_line(0);
+		entry = readline("");
 		if (!entry)
 			return (0);
 		if (!ft_check_eof(entry, eof))
@@ -39,7 +39,7 @@ int	ft_save_entry(int fd, char *eof)
 			free(entry);
 			break;
 		}
-		write(fd, entry, ft_strlen(entry) - 1);
+		write(fd, entry, ft_strlen(entry));
 		write(fd, "\n", 1);
 		free(entry);
 	}
