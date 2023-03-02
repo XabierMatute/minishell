@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/02 16:07:59 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:02:39 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void	processline(char *str)
 		add_history(str);
 		if (validsintax(str))
 		{
-			if (contain(str, '|'))
+			if (prepcontain(str, '|'))
 				pipes(ft_split(str, '|'));
 			else
 				nopipes(str);

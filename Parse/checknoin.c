@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:12:30 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/01 18:14:28 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:01:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	checkclosed(char *s)
 
 static int	checkcontain(char *s, char c)
 {
-	if (contain(s, c))
+	if (prepcontain(s, c))
 	{
 		ft_printf("😞Error: no interpreto el caracter especial %c\n", c);
 		return (0);

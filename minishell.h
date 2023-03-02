@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/02 16:02:03 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:00:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ char	*ft_strjoinfree(char *s1, char *s2);
 char 	*ignore(char *s, char c);
 char 	*ignoreq(char *s);
 int	 	contain(char *s, char c);
+int	prepcontain(char *s, char c);
 char	*extract(char *s);
 size_t	ft_wlen(char *s, char c);
 char	**ft_split(char *s, char c);
