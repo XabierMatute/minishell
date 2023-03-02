@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/24 17:48:29 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/02 16:02:03 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,6 @@ char 	*expand36(char *s);
 char	 *expand34(char *s);
 size_t	 e36len(char *s);
 
-
-
-
-
 /* ------------------- BUILT_INS ---------------------*/
 int	is_builtin(char **comands);
 int	ft_cd(char **args);
@@ -89,6 +85,7 @@ int	ft_manage_builtins(char **comands);
 char *ft_getpwd();
 int ft_print_export_env();
 int ft_check_variable_name(char *variable);
+void	ft_waitpid(int pid);
 
 /* ------------------- MANAGE-ENV-NODES ---------------------*/
 t_stack	*ft_create_env(char **env);

@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:35:27 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/28 16:40:13 by jperez           ###   ########.fr        #
+#    Updated: 2023/03/02 16:02:28 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,6 +108,7 @@ SRC :=	main.c					\
 		Pipes/ft_copy.c				\
 		Utils/ft_execve.c			\
 		Utils/printexport.c			\
+		built-ins/ft_waitpid.c     \
 		
 WHITE = \033[0;37m
 RED = \033[0;31m
