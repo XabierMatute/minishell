@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:24:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/24 18:32:11 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/05 19:57:45 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-static size_t ft_vlen(char *s)
+static size_t	ft_vlen(char *s)
 {
 	size_t	l;
 
@@ -31,7 +31,7 @@ char	*ft_advance_to_equal(char *variable)
 	return (++variable);
 }
 
-char *ft_getenv(char *variable)
+char	*ft_getenv(char *variable)
 {
 	t_node	*ptr;
 
@@ -40,7 +40,8 @@ char *ft_getenv(char *variable)
 		ptr = G_cp_env->peek;
 		while (ptr)
 		{
-			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)) && contain(ptr->variable, '='))
+			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)) && \
+				contain(ptr->variable, '='))
 				return (ft_advance_to_equal(ptr->variable));
 			ptr = ptr->next;
 		}
@@ -48,7 +49,7 @@ char *ft_getenv(char *variable)
 	return (NULL);
 }
 
-t_node *ft_getenv_node(char *variable)
+t_node	*ft_getenv_node(char *variable)
 {
 	t_node	*ptr;
 
@@ -57,7 +58,8 @@ t_node *ft_getenv_node(char *variable)
 		ptr = G_cp_env->peek;
 		while (ptr)
 		{
-			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)) && contain(ptr->variable, '='))
+			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)) && \
+				contain(ptr->variable, '='))
 				return (ptr);
 			ptr = ptr->next;
 		}
