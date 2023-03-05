@@ -6,13 +6,13 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:46:05 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/23 19:46:20 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/05 20:25:58 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-char **ft_copy(char **comands, char *path, int comands_len)//esto esta chapucilla
+char	**ft_copy(char **comands, char *path, int comands_len)
 {
 	char	**output;
 	int		i;
@@ -26,7 +26,7 @@ char **ft_copy(char **comands, char *path, int comands_len)//esto esta chapucill
 	output[0] = ft_strdup(path);
 	j = 1;
 	i = 0;
-	while(comands[++i])
+	while (comands[++i])
 	{
 		output[j] = ft_strdup(comands[i]);
 		j++;
@@ -35,4 +35,3 @@ char **ft_copy(char **comands, char *path, int comands_len)//esto esta chapucill
 	output[i] = NULL;
 	return (output);
 }
-
