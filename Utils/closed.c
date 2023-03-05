@@ -6,20 +6,20 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:36:31 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/22 17:24:28 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/05 20:10:54 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int closedq(char *s)
+int	closedq(char *s)
 {
 	while (*s)
 	{
 		s = ignoreq(s);
 		if (*s == 0)
 		{
-			return(0);
+			return (0);
 		}
 		s++;
 	}
