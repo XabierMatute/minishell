@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:30:07 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 21:41:23 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/05 20:02:03 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ int	ft_args_lenght(char **args)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (args)
-		while (args[++i]);
+		while (args[i])
+			i++;
 	return (i);
 }
