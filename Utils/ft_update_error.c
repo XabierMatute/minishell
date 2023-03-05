@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:05:05 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/17 17:54:51 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/05 20:05:28 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void	ft_update_error(int	n)
+void	ft_update_error(int n)
 {
 	char	*num;
 
