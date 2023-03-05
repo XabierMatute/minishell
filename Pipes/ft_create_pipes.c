@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:07:35 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/11 19:19:19 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/05 20:27:12 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	**ft_create_pipes(int pipes_num)
 {
 	int		i;
 	int		**pipes;
-	
+
 	if (!pipes_num)
-		return (NULL);	
+		return (NULL);
 	pipes = (int **)malloc(sizeof(int *) * (pipes_num + 1));
 	if (!pipes)
 		return (NULL);
