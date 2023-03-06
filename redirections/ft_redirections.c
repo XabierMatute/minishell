@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 17:34:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/24 18:09:03 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:09:58 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static int	ft_check_access(char *path)
 {
-//	printf("---->%s\n", path);
 	if (access(path, F_OK | R_OK))
 	{
 		ft_printf("❌ %s: ", path);
@@ -24,9 +23,9 @@ static int	ft_check_access(char *path)
 	return (0);
 }
 
-int ft_open(char *path, int flag)
+int	ft_open(char *path, int flag)
 {
-	int fd;
+	int	fd;
 
 	fd = open(path, O_CREAT | O_WRONLY | flag, 0660);
 	if (fd <= 0)
@@ -34,18 +33,18 @@ int ft_open(char *path, int flag)
 		perror("");
 		return (-1);
 	}
-	return(fd);
+	return (fd);
 }
 
 int	ft_redirect_output(char *path, int flag)
 {
-	int fd;
+	int	fd;
 
 	fd = ft_open(path, flag);
 	if (fd < 0)
 	{
 		ft_close(STDOUT_FILENO);
-		return(1);
+		return (1);
 	}
 	if (ft_dup2(fd, STDOUT_FILENO))
 		return (1);
@@ -54,9 +53,9 @@ int	ft_redirect_output(char *path, int flag)
 	return (0);
 }
 
-static int ft_open2(char *path)
+static int	ft_open2(char *path)
 {
-	int fd;
+	int	fd;
 
 	fd = open(path, O_RDONLY);
 	if (fd <= 0)
@@ -64,12 +63,12 @@ static int ft_open2(char *path)
 		perror("");
 		return (-1);
 	}
-	return(fd);
+	return (fd);
 }
 
-int ft_redirect_input(char *path)
+int	ft_redirect_input(char *path)
 {
-	int fd;
+	int	fd;
 
 	if (ft_check_access(path))
 		return (1);
