@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/02 19:02:39 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/05 18:48:28 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static int	nopipes(char *comand)
 {
 	char	**comands;
 
-	makeredirections(comand);
+	if (makeredirections(comand))
+		return (1);
 	comands = expandall(ft_split(comand, ' '));
 	if (!comands)
 		return (merror());

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/02 19:00:47 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/05 18:47:55 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,10 @@ void	ft_pop(t_stack *stack, int index);
 int ft_add_listener();
 int ft_add_father_listener();
 int ft_add_child_listener();
+int ft_add_redirections_listener();
 int	ft_siagction(int signal, type_sa *sa);
-void	ft_sigint_action();
+void ft_manage_here_doc_signals(int signum);
+void	ft_sigint_action(void);
 
 /* ------------------- PIPES ---------------------*/
 int pipes(char **comands);
@@ -142,7 +144,7 @@ int	printexport(char	*s);
 
 
 /* ------------------- REDIRECTIONS ---------------------*/
-void	makeredirections(char *comand);
+int	makeredirections(char *comand);
 int	ft_here_doc(char *eof);
 int	ft_redirect_output(char *path, int flag);
 int ft_redirect_input(char *path);

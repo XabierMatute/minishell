@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/21 19:46:59 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:02:55 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	redirecti(char *comand, char **eof, char **ir)
 		}
 		else if (comand[i] == '<' && comand[i + 1] == '<')
 		{
-			ft_here_doc(*eof);
+			if (ft_here_doc(*eof))
+				return (2);
 			eof++;
 			i++;
 		}
@@ -62,7 +63,7 @@ int	redirecto(char *comand, char **or, char **orae)
 	return (1);
 }
 
-void	makeredirections(char *comand)
+int	makeredirections(char *comand)
 {
 	char	**eof;
 	char	**ir;
@@ -75,7 +76,8 @@ void	makeredirections(char *comand)
 	{
 		eof = expandall(getir_ae(comand));
 		ir = expandall(getir(comand));
-		redirecti(aux, eof, ir);
+		if (redirecti(aux, eof, ir) == 2)
+			return (ft_free_2d_arr((void **)eof), ft_free_2d_arr((void **)ir), free(aux), 1);
 		ft_free_2d_arr((void **)eof);
 		ft_free_2d_arr((void **)ir);
 	}
@@ -90,4 +92,5 @@ void	makeredirections(char *comand)
 	}
 	if (aux)
 		free(aux);
+	return (0);
 }
