@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:13:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/06 16:26:16 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:32:05 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*expand3634(char *s)
 		return (ft_strjoinfree(ft_strdup("$"), expand34(s)));
 	v = ft_calloc(l + 1, sizeof(char));
 	if (!v)
-		return (merror());
+		return (merror(), NULL);
 	while (l--)
 		v[l] = s[l];
 	if (ft_getenv(v))
@@ -65,7 +65,7 @@ char	*expand34(char *s)
 	l = e34len(s);
 	e = ft_calloc(l + 1, sizeof(char));
 	if (!e)
-		return (merror());
+		return (merror(), NULL);
 	while (l--)
 		e[l] = s[l];
 	return (ft_strjoinfree(e, expand34(s + ft_strlen(e))));
