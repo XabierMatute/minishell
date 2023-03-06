@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 17:05:16 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 18:43:59 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	ft_child_process(int **pipes, char *comand, int i)
 
 	if (ft_choose_dups(pipes, i))
 		exit (rerror());
-	makeredirections(comand);
+	if (makeredirections(comand))
+		exit(1);
 	comands = expandall(ft_split(comand, ' '));
 	if (!comands)
 		exit(merror());

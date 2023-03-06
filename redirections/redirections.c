@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/06 17:39:47 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:55:38 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	redirecti(char *comand, char **eof, char **ir)
 	{
 		if (comand[i] == '<' && comand[i + 1] != '<')
 		{
-			ft_redirect_input(*ir);
+			if (ft_redirect_input(*ir))
+				return (1);
 			ir++;
 		}
 		else if (comand[i] == '<' && comand[i + 1] == '<')
@@ -35,7 +36,7 @@ int	redirecti(char *comand, char **eof, char **ir)
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	redirecto(char *comand, char **or, char **orae)
@@ -49,18 +50,20 @@ int	redirecto(char *comand, char **or, char **orae)
 	{
 		if (comand[i] == '>' && comand[i + 1] != '>')
 		{
-			ft_redirect_output(*or, O_TRUNC);
+			if (ft_redirect_output(*or, O_TRUNC))
+				return (1);
 			or++;
 		}
 		else if (comand[i] == '>' && comand[i + 1] == '>')
 		{
-			ft_redirect_output(*orae, O_APPEND);
+			if (ft_redirect_output(*orae, O_APPEND))
+				return (2);
 			orae++;
 			i++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	makeire(char *comand, char *aux)
@@ -72,9 +75,9 @@ int	makeire(char *comand, char *aux)
 	{
 		eof = expandall(getir_ae(comand));
 		ir = expandall(getir(comand));
-		if (redirecti(aux, eof, ir) == 2)
+		if (redirecti(aux, eof, ir))
 			return (ft_free_2d_arr((void **)eof)
-				, ft_free_2d_arr((void **)ir), free(aux), 1);
+				, ft_free_2d_arr((void **)ir), 1);
 		ft_free_2d_arr((void **)eof);
 		ft_free_2d_arr((void **)ir);
 	}
@@ -90,7 +93,9 @@ int	makeore(char *comand, char *aux)
 	{
 		orae = expandall(getor_ae(comand));
 		or = expandall(getor(comand));
-		redirecto(aux, or, orae);
+		if (redirecto(aux, or, orae))
+			return (ft_free_2d_arr((void **)or)
+				, ft_free_2d_arr((void **)orae), 1);
 		ft_free_2d_arr((void **)or);
 		ft_free_2d_arr((void **)orae);
 	}
@@ -102,8 +107,10 @@ int	makeredirections(char *comand)
 	char	*aux;
 
 	aux = ft_strdup(comand);
-	makeire(comand, aux);
-	makeore(comand, aux);
+	if (!aux)
+		return (merror());
+	if (makeire(comand, aux) || makeore(comand, aux))
+		return (free(aux), 1);
 	if (aux)
 		free(aux);
 	return (0);
