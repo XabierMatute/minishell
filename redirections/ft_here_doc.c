@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_here_doc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:52:46 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 14:35:17 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 16:43:42 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,18 @@ int	ft_save_entry(int fd, char *eof)
 	char	*entry;
 
 	ft_update_error(0);
-	while (1)
-	{
-		if (ft_atoi(ft_getenv("?")) == 1)
-			return (1);
-		entry = readline(">");
-		if (!entry)
-			return (0);
-		if (!ft_check_eof(entry, eof))
-		{
-			free(entry);
-			break;
-		}
-		write(fd, entry, ft_strlen(entry));
-		write(fd, "\n", 1);
-		free(entry);
-	}
-	return (0);
+	entry = readline(">");
+	if (ft_atoi(ft_getenv("?")) == 1)
+		return (ft_atoi(ft_getenv("?")) == 1);
+	if (!entry)
+		return (0);
+	if (!ft_strncmp(entry, eof, ft_strlen(eof) + 1))
+		return (free(entry), 0);
+	if (write(fd, entry, ft_strlen(entry)) < 0)
+		return (free(entry), 1);
+	write(fd, "\n", 1);
+	free(entry);
+	return (ft_save_entry(fd, eof));
 }
 
 int	ft_here_doc(char *eof)
@@ -57,7 +52,7 @@ int	ft_here_doc(char *eof)
 	if (ft_pipe(pipe))
 		return (1);
 	if (ft_save_entry(pipe[1], eof))
-		return (1);
+		return (1 + ft_close(pipe[0]) || ft_close(pipe[1]));
 	if (ft_dup2(pipe[0], STDIN_FILENO))
 		return (1);
 	if (ft_close(pipe[0]) || ft_close(pipe[1]))

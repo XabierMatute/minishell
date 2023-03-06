@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_redirections_signals.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 17:11:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/05 18:56:37 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 15:50:25 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,16 @@ void	ft_empty_pipe(int fd)
 		c[bytes] = '\0';
 	}
 	*/
-	ft_update_error(1);
+	// ft_update_error(1);
 }
 
 void ft_manage_here_doc_signals(int signum)
 {
-	static int	fd;
-
-	if (signum == SIGQUIT)
-		return (rl_redisplay());
-	else if (signum == SIGINT)
-		ft_empty_pipe(fd);
-	fd = 1;
-	if (signum < 0)
-		fd = 0 - signum;
+	if (signum == SIGINT)
+	{
+		ft_update_error(1);
+		close(STDIN_FILENO);
+	}
 }
 
 int ft_add_redirections_listener()
