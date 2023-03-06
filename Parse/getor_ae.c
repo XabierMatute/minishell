@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:52:43 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/07 11:36:46 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:52:12 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ static unsigned int	redirections(char *s)
 	return (p);
 }
 
-
-
 char	**getor_ae(char *s)
 {
 	char	**or;
@@ -50,5 +48,5 @@ char	**getor_ae(char *s)
 		s++;
 	}
 	or[i] = 0;
-	return(or);
+	return (or);
 }
