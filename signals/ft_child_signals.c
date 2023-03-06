@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:30:42 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 17:24:17 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:56:58 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	ft_manage_terminal(void)
 {
 	struct termios	tty;
 
+	ft_bzero(&tty, sizeof(tty));
 	tcgetattr(STDIN_FILENO, &tty);
 	tty.c_lflag |= ECHOCTL;
 	tcsetattr(STDIN_FILENO, TCSANOW, &tty);
