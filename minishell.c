@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/05 18:48:28 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:28:15 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ static int	nopipes(char *comand)
 		if (is_builtin(comands))
 			ft_update_error(ft_manage_builtins(comands));
 		else
-			onlychild(ft_copy(comands, ft_find_cmd(comands[0]), ft_args_lenght(comands)));//esta es muy larga :(
+			onlychild(ft_copy(comands, ft_find_cmd(comands[0]),
+					ft_args_lenght(comands)));
 	}
 	ft_free_2d_arr((void **)comands);
 	return (0);
