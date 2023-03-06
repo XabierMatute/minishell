@@ -6,20 +6,22 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:30:42 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/05 19:10:55 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:24:17 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-static void	ft_manage_terminal() {
-  struct termios tty;
-  tcgetattr(STDIN_FILENO, &tty);
-  tty.c_lflag |= ECHOCTL;
-  tcsetattr(STDIN_FILENO, TCSANOW, &tty);
+static void	ft_manage_terminal(void)
+{
+	struct termios	tty;
+
+	tcgetattr(STDIN_FILENO, &tty);
+	tty.c_lflag |= ECHOCTL;
+	tcsetattr(STDIN_FILENO, TCSANOW, &tty);
 }
 
-static	void ft_manage_signals(int signum)
+static void	ft_manage_signals(int signum)
 {
 	if (signum == SIGQUIT)
 		write(1, "Quit: 3\n", 8);
@@ -27,9 +29,9 @@ static	void ft_manage_signals(int signum)
 		write(1, "\n", 1);
 }
 
-int ft_add_child_listener()
+int	ft_add_child_listener(void)
 {
-	type_sa sa;
+	type_sa	sa;
 
 	sa.sa_sigaction = 0;
 	sa.sa_mask = 0;
