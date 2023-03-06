@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:23:19 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/22 18:06:02 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 16:23:06 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-size_t elen(char *s)
+size_t	elen(char *s)
 {
 	size_t	l;
 
@@ -22,15 +22,15 @@ size_t elen(char *s)
 	return (l);
 }
 
-char *expand(char *s)
+char	*expand(char *s)
 {
 	char	*e;
 	size_t	l;
-	
+
 	if (!s)
-		return(0);
+		return (0);
 	if (!*s)
-		return(ft_strdup(""));
+		return (ft_strdup(""));
 	if (*s == 39)
 		return (expand39(s + 1));
 	if (*s == 36)
@@ -38,14 +38,11 @@ char *expand(char *s)
 	if (*s == 34)
 		return (expand34(s + 1));
 	l = elen(s);
-	// printf("l = %i\n", l);
-
 	e = ft_calloc(l + 1, sizeof(char));
 	if (!e)
-		return(0);//printear error de memoria
+		return (merror());
 	while (l--)
 		e[l] = s[l];
-	// printf("e = %s\n", e);
 	return (ft_strjoinfree(e, expand(s + ft_strlen(e))));
 }
 
@@ -58,16 +55,12 @@ char	**expandall(char **ss)
 		return (0);
 	e = malloc(sizeof(char *) * (ft_args_lenght(ss) + 1));
 	if (!e)
-	{
-		ft_free_2d_arr((void **)ss);
-		return (0);
-	}
-	
+		return (ft_free_2d_arr((void **)ss), 0);
 	i = 0;
 	while (ss[i])
 	{
 		e[i] = expand(ss[i]);
-		if	(!e[i])
+		if (!e[i])
 		{
 			ft_free_2d_arr((void **)e);
 			ft_free_2d_arr((void **)ss);
@@ -77,23 +70,5 @@ char	**expandall(char **ss)
 	}
 	e[i] = 0;
 	ft_free_2d_arr((void **)ss);
-	return (e);	
-}//en general cubrete de errores de memoria
-// int main(int argc, char const *argv[])
-// {
-// 	// while (argc --)
-// 	// {
-// 	// 	printf("%s->%s\n", argv[argc], expand(argv[argc]));
-// 	// }
-// 	// printf("%s->%s\n", "m\'ira y\'\'o que s\'\'e 'bro\'", expand("m\'ira y\'\'o que s\'\'e 'bro\'"));
-	
-// 	printf("%s\n", expand(NULL));
-
-// 	printf("%s\n", expand(""));
-// 	printf("%s\n", expand("ey"));
-// 	printf("%s\n", expand("aupa"));
-// 	printf("%s\n", expand("\'aupa\'"));
-// 	printf("%s\n", expand("ey \'au\"pa\' babyboy"));
-// 	printf("%s\n", expand("ey \'au\"pa\'"));
-// 	return 0;
-// }
+	return (e);
+}
