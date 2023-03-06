@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:06:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/02 12:18:01 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:19:45 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int	alone(char *s)
 
 int	checkpipes(char *s)
 {
-	return (!first(s) &&
-			!last(s) &&
-			alone(s));
+	return (!first(s)
+		&& !last(s)
+		&& alone(s));
 }
