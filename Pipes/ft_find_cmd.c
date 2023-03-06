@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:49:27 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/24 17:15:36 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:13:42 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,16 @@ char	*ft_check_folder_access(char *folder, char *cmd)
 
 char	*ft_find_folder(char *path, char *cmd)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*folder;
 
 	i = 0;
 	while (path[i])
 	{
 		j = i;
-		while (path[j++] != ':' && path[j] != '\0');
+		while (path[j++] != ':' && path[j] != '\0')
+			;
 		folder = ft_check_folder_access(ft_substr(path, i, j - i - 1), cmd);
 		if (folder)
 			return (folder);
@@ -46,14 +47,14 @@ char	*ft_find_folder(char *path, char *cmd)
 	return (NULL);
 }
 
-char *ft_find_cmd(char *cmd)
+char	*ft_find_cmd(char *cmd)
 {
 	char	*path;
 	char	*folder;
 
 	if (!ft_strncmp(cmd, ".", 1) || !ft_strncmp(cmd, "/", 1))
 		return (ft_strdup(cmd));
-	path = ft_getenv("PATH"); 
+	path = ft_getenv("PATH");
 	if (!path || !cmd)
 		return (ft_strdup(cmd));
 	if (!*cmd)
