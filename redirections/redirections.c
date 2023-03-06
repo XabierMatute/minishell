@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/06 17:22:04 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:39:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ int	makeredirections(char *comand)
 	char	*aux;
 
 	aux = ft_strdup(comand);
-	makeire(aux, comand);
-	makeore(aux, comand);
+	makeire(comand, aux);
+	makeore(comand, aux);
 	if (aux)
 		free(aux);
 	return (0);
