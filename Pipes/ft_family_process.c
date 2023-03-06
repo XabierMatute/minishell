@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:33:51 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/23 19:46:28 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:05:16 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,12 @@ void	ft_child_process(int **pipes, char *comand, int i)
 int	ft_family_process(int **pipes, char *comand, int i)
 {
 	pid_t		pid;
-	
-	// printf("HOLLLLAA\n");
 
 	pid = fork();
 	if (pid < 0)
-		perror("");	
+		perror("");
 	ft_add_child_listener();
-	if (pid == 0)//yo metia todo esto en una función child process
+	if (pid == 0)
 		ft_child_process(pipes, comand, i);
-	else
-	{
-		
-	}
 	return (0);
 }
