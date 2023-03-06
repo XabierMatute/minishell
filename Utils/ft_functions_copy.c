@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:10:30 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/05 20:00:51 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 18:02:08 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_pipe(int *fds)
 	return (0);
 }
 
-int	ft_siagction(int signal, type_sa *sa)
+int	ft_siagction(int signal, t_type_sa *sa)
 {
 	if (sigaction(signal, sa, NULL) == -1)
 	{

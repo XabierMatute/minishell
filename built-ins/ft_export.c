@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:09:40 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/28 16:56:19 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_export(char **variables)
 		if (!ft_check_variable(variables[i]))
 		{
 			if (ft_update_variable(variables[i]))
-				ft_push(G_cp_env, ft_strdup(variables[i]));
+				ft_push(g_cp_env, ft_strdup(variables[i]));
 		}
 		else
 			output = 1;

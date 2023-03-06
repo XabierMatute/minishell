@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 17:56:37 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 18:02:08 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include "./readline/readline.h"
 # include "./readline/history.h"
 
-typedef struct sigaction	type_sa;
+typedef struct sigaction	t_type_sa;
 typedef struct node{
 	char		*variable;
 	struct node	*next;
@@ -38,7 +38,7 @@ typedef struct stack
 	int		len;
 }	t_stack;
 
-t_stack	*G_cp_env;
+t_stack						*g_cp_env;
 
 int		minishell(void);
 
@@ -89,7 +89,7 @@ int		ft_add_listener(void);
 int		ft_add_father_listener(void);
 int		ft_add_child_listener(void);
 int		ft_add_redirections_listener(void);
-int		ft_siagction(int signal, type_sa *sa);
+int		ft_siagction(int signal, t_type_sa *sa);
 void	ft_manage_here_doc_signals(int signum);
 void	ft_sigint_action(void);
 

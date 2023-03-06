@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:24:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/05 19:57:45 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ char	*ft_getenv(char *variable)
 {
 	t_node	*ptr;
 
-	if (G_cp_env->peek)
+	if (g_cp_env->peek)
 	{
-		ptr = G_cp_env->peek;
+		ptr = g_cp_env->peek;
 		while (ptr)
 		{
 			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)) && \
@@ -53,9 +53,9 @@ t_node	*ft_getenv_node(char *variable)
 {
 	t_node	*ptr;
 
-	if (G_cp_env->peek)
+	if (g_cp_env->peek)
 	{
-		ptr = G_cp_env->peek;
+		ptr = g_cp_env->peek;
 		while (ptr)
 		{
 			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)) && \

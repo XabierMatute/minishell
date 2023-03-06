@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:31:33 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/28 17:02:50 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_unset(char **args)
 	while (args[++i])
 	{
 		if (!ft_check_variable_name(args[i]))
-			ft_delete_variable(G_cp_env, args[i]);
+			ft_delete_variable(g_cp_env, args[i]);
 		else
 			output = 1;
 	}
