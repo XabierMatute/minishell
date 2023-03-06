@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 19:36:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/02/07 16:30:33 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:01:57 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*extract(char *s)
 	i = 0;
 	l = archivelen(s);
 	a = malloc((sizeof(char) * l) + 1);
-	if(!a)
+	if (!a)
 		return (0);
 	while (i < l)
 	{
@@ -46,7 +46,5 @@ char	*extract(char *s)
 		i++;
 	}
 	a[l] = 0;
-	return(a);	
-}//testea esta hecho
-
-
+	return (a);
+}
