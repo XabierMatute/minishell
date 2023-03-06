@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:12:30 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/02 19:01:47 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:18:06 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static int	checkcontain(char *s, char c)
 
 int	checknoin(char *s)
 {
-		return (checkclosed(s) &&
-				checkcontain(s, 92) &&
-				checkcontain(s, '(') &&
-				checkcontain(s, ')') &&
-				checkcontain(s, '*') &&
-				checkcontain(s, ';'));
+	return (checkclosed(s)
+		&& checkcontain(s, 92)
+		&& checkcontain(s, '(')
+		&& checkcontain(s, ')')
+		&& checkcontain(s, '*')
+		&& checkcontain(s, ';'));
 }
