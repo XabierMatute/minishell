@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 19:06:13 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/28 16:53:55 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int	ft_env(char **args)
 
 	if (ft_check_args(args))
 		return (42);
-	if (G_cp_env->peek)
+	if (g_cp_env->peek)
 	{
-		if (G_cp_env->peek->next)
+		if (g_cp_env->peek->next)
 		{
-			ptr = G_cp_env->peek;
+			ptr = g_cp_env->peek;
 			while (ptr)
 			{
 				if (ft_strncmp(ptr->variable, "?", 1) && \
@@ -49,11 +49,11 @@ int	ft_print_export_env(void)
 {
 	t_node	*ptr;
 
-	if (G_cp_env->peek)
+	if (g_cp_env->peek)
 	{
-		if (G_cp_env->peek->next)
+		if (g_cp_env->peek->next)
 		{
-			ptr = G_cp_env->peek;
+			ptr = g_cp_env->peek;
 			while (ptr)
 			{
 				if (ft_strncmp(ptr->variable, "?", 1))

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 17:23:49 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/28 16:45:54 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ t_stack	*ft_create_env(char **env)
 
 	if (!env)
 		return (NULL);
-	G_cp_env = ft_create_stack();
-	if (!G_cp_env)
+	g_cp_env = ft_create_stack();
+	if (!g_cp_env)
 		return (NULL);
-	ft_push(G_cp_env, ft_strdup("?=0"));
+	ft_push(g_cp_env, ft_strdup("?=0"));
 	i = -1;
 	while (env[++i])
-		ft_push(G_cp_env, ft_strdup(env[i]));
-	return (G_cp_env);
+		ft_push(g_cp_env, ft_strdup(env[i]));
+	return (g_cp_env);
 }

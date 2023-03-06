@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_transform_env.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:11:41 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/05 19:59:07 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	**ft_transform_env(void)
 	t_node	*ptr;
 	char	**env;
 
-	env = (char **)malloc(sizeof(char *) * G_cp_env->len);
+	env = (char **)malloc(sizeof(char *) * g_cp_env->len);
 	i = 0;
-	ptr = G_cp_env->peek;
+	ptr = g_cp_env->peek;
 	while (ptr)
 	{
 		if (ft_strncmp(ptr->variable, "?", 1))

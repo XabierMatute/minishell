@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 19:09:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/02/28 17:17:04 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_exit(char **args)
 		exit(0);
 	if (ft_check_args(args))
 		return (1);
-	destroy_stack(G_cp_env);
+	destroy_stack(g_cp_env);
 	exit(ft_atoi(*args));
 	return (97);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execve.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:48:02 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/05 20:08:13 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_execve(char *path, char **comands)
 	{
 		res = ft_execve_errors(path);
 		ft_free_2d_arr((void **)comands);
-		destroy_stack(G_cp_env);
+		destroy_stack(g_cp_env);
 		ft_free_2d_arr((void **)env);
 		return (res);
 	}

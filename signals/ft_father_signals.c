@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_father_signals.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:30:39 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 17:58:08 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 18:12:03 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	ft_manage_signals(int signum)
 
 int	ft_add_father_listener(void)
 {
-	type_sa	sa;
+	t_type_sa	sa;
 
 	sa.sa_sigaction = 0;
 	sa.sa_mask = 0;

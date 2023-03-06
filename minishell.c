@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:59:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/06 17:28:15 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	minishell(void)
 	int		stdio[2];
 
 	getstdio(stdio);
-	while (G_cp_env)
+	while (g_cp_env)
 	{
 		resetstdio(stdio);
 		if (ft_add_father_listener())

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:04:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/06 17:21:27 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	pipes(char **comands)
 	if (ft_args_lenght(comands) > 1 && !pipes)
 		merror();
 	i = -1;
-	while (comands[++i] && G_cp_env)
+	while (comands[++i] && g_cp_env)
 		ft_family_process(pipes, comands[i], i);
 	if (pipes)
 		if (ft_close_pipes(pipes, 0, 1))
