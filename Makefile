@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:35:27 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/05 18:59:27 by jperez           ###   ########.fr        #
+#    Updated: 2023/03/07 17:11:42 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,6 +110,7 @@ SRC :=	main.c					\
 		Utils/printexport.c			\
 		built-ins/ft_waitpid.c     \
 		Signals/ft_redirections_signals.c	\
+		Utils/ft_vlen.c					\
 		
 WHITE = \033[0;37m
 RED = \033[0;31m
