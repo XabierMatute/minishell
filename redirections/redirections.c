@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/07 11:08:43 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/07 14:27:08 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	redirecti(char *comand, char **eof, char **ir)
 		{
 			if (ft_here_doc(eof, j))
 				return (2);
-			//eof++;
 			j++;
 			i++;
 		}
