@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:04:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/07 14:35:56 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:37:10 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	pipes(char **comands)
 	while (comands[++i] && g_cp_env)
 	{
 		if (patch(comands[i]))
-			return (rerror());
+			return (ft_update_error(1), 1);
 		ft_family_process(pipes, comands[i], i);
 	}
 	if (pipes)
