@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:52:46 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/07 12:50:14 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/07 16:23:35 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_save_entry(int fd, char *eof)
 	return (1);
 }
 
-void	ft_pre_here(int	process, int *cp_stdin, int *lap, char *eof)
+void	ft_pre_here(int process, int *cp_stdin, int *lap, char *eof)
 {
 	int	aux;
 	int	aux2;
@@ -56,17 +56,16 @@ void	ft_pre_here(int	process, int *cp_stdin, int *lap, char *eof)
 	if (!process || process == NO_STARTED)
 	{
 		*cp_stdin = dup(STDIN_FILENO);
-
 		if (eof == NULL)
 			*lap = END;
 		else
 			*lap = START;
 	}
-	else 
+	else
 	{
 		close(STDIN_FILENO);
 		aux = *cp_stdin;
-		*cp_stdin = dup(*cp_stdin);//Aqui ns donde hay que cerrar algun fd, para q no se acumulen
+		*cp_stdin = dup(*cp_stdin);
 		*cp_stdin = dup(*cp_stdin);
 		aux2 = *cp_stdin;
 		dup2(STDIN_FILENO, *cp_stdin);
@@ -87,18 +86,16 @@ void	ft_post_here(int lap, int *process, int cp_stdin)
 	else if (lap == END)
 	{
 		*process = NO_STARTED;
-		close(cp_stdin); //Ns si funciona ifgaul rompe el STDIN
+		close(cp_stdin);
 	}
 }
 
-int		ft_here_doc(char **eof, int i)
+int	ft_here_doc(char **eof, int i)
 {
 	static int	process;
 	static int	cp_stdin;
 	static int	lap;
-	//int			aux;
 	int			pipe[2];
-
 
 	ft_pre_here(process, &cp_stdin, &lap, eof[i + 1]);
 	ft_manage_here_doc_signals(-cp_stdin);
