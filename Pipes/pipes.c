@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:04:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/07 15:37:10 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:04:05 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,21 @@ int	redirecthd(char **eof)
 	return (0);
 }
 
-int	patch(char *comand)
+int	patch(char **comands)
 {
 	char	**eof;
+	int		i;
 
-	if (contain(comand, '<'))
+	i = 0;
+	while (comands[++i] && g_cp_env)
 	{
-		eof = expandall(getir_ae(comand));
-		if (redirecthd(eof))
-			return (ft_free_2d_arr((void **)eof), 1);
-		ft_free_2d_arr((void **)eof);
+		if (contain(comands[i], '<'))
+		{
+			eof = expandall(getir_ae(comands[i]));
+			if (redirecthd(eof))
+				return (ft_free_2d_arr((void **)eof), 1);
+			ft_free_2d_arr((void **)eof);
+		}
 	}
 	return (0);
 }
@@ -51,12 +56,10 @@ int	pipes(char **comands)
 	if (ft_args_lenght(comands) > 1 && !pipes)
 		merror();
 	i = -1;
+	if (patch(comands))
+		return (ft_update_error(1), 1);
 	while (comands[++i] && g_cp_env)
-	{
-		if (patch(comands[i]))
-			return (ft_update_error(1), 1);
 		ft_family_process(pipes, comands[i], i);
-	}
 	if (pipes)
 		if (ft_close_pipes(pipes, 0, 1))
 			rerror();
