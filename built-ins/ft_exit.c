@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 19:09:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:45:04 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	inrange(char *s)
 
 static int	ft_check_args(char **args)
 {
-	if (!ft_strisdigit(args[0]))
+	if ((args[0][0] != '-' && !ft_strisdigit(args[0]))
+		|| (args[0][0] == '-' && !ft_strisdigit(args[0] + 1)))
 		ft_printf("exit: %s: numeric argument required\n", args[0]);
 	else if (ft_args_lenght(args) > 1)
 	{
