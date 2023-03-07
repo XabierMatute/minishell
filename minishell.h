@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 18:02:08 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:29:25 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@
 # include "./libft/libft.h"
 # include "./readline/readline.h"
 # include "./readline/history.h"
+
+# define STARTED	1
+# define NO_STARTED	0
+
+# define START		0
+# define END		1
+# define MIDDLE		2
 
 typedef struct sigaction	t_type_sa;
 typedef struct node{
@@ -132,7 +139,7 @@ int		printexport(char	*s);
 
 /* ------------------- REDIRECTIONS ---------------------*/
 int		makeredirections(char *comand);
-int		ft_here_doc(char *eof);
+int		ft_here_doc(char **eof, int i);
 int		ft_redirect_output(char *path, int flag);
 int		ft_redirect_input(char *path);
 

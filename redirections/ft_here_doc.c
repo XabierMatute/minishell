@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:52:46 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/07 11:25:53 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/07 11:34:53 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,23 @@ int	ft_save_entry(int fd, char *eof)
 {
 	char	*entry;
 
-	ft_update_error(0);
-	entry = readline(">");
-	if (ft_atoi(ft_getenv("?")) == 1)
-		return (ft_atoi(ft_getenv("?")) == 1);
-	if (!entry)
-		return (0);
-	if (!ft_strncmp(entry, eof, ft_strlen(eof) + 1))
-		return (free(entry), 0);
-	if (write(fd, entry, ft_strlen(entry)) < 0)
-		return (free(entry), 1);
-	write(fd, "\n", 1);
-	free(entry);
-	return (ft_save_entry(fd, eof));
+	entry = 0;
+	rl_on_new_line();
+	while (g_cp_env)
+	{
+		entry = readline(">");
+		if (ft_atoi(ft_getenv("?")) == 1)
+			return (ft_atoi(ft_getenv("?")) == 1);
+		if (!entry)
+			return (0);
+		if (!ft_strncmp(entry, eof, ft_strlen(eof) + 1))
+			return (free(entry), 0);
+		if (write(fd, entry, ft_strlen(entry)) < 0)
+			return (free(entry), 1);
+		write(fd, "\n", 1);
+		free(entry);
+	}
+	return (1);
 }
 
 
@@ -92,6 +96,7 @@ int		ft_here_doc(char **eof, int i)
 	}
 
 
+	ft_update_error(0);
 	ft_add_redirections_listener();
 	if (ft_pipe(pipe))
 		return (1);
