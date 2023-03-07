@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:47:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/07 14:27:08 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:45:50 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	redirecti(char *comand, char **eof, char **ir)
 	i = 0;
 	while (comand[i] && comand[i + 1])
 	{
+		
 		if (comand[i] == '<' && comand[i + 1] != '<')
 		{
 			if (ft_redirect_input(*ir))
@@ -36,7 +37,7 @@ int	redirecti(char *comand, char **eof, char **ir)
 			j++;
 			i++;
 		}
-		i++;
+		i += 1 + ignoreq(comand + i) - (comand + i);
 	}
 	return (0);
 }
@@ -63,7 +64,7 @@ int	redirecto(char *comand, char **or, char **orae)
 			orae++;
 			i++;
 		}
-		i++;
+		i += 1 + ignoreq(comand + i) - (comand + i);
 	}
 	return (0);
 }
