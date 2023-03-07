@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:04:38 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/07 14:31:08 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:35:56 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	redirecthd(char **eof)
 	int		j;
 
 	j = 0;
-	while(eof[j])
+	while (eof[j])
 	{
 		if (ft_here_doc(eof, j))
 			return (1);
