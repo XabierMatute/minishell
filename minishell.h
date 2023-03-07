@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:47:01 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 22:29:25 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/07 17:11:17 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ int		ft_strisdigit(char *str);
 int		ft_execve(char *path, char **comands);
 
 int		printexport(char	*s);
+size_t	ft_vlen(char *s);
 
 /* ------------------- REDIRECTIONS ---------------------*/
 int		makeredirections(char *comand);

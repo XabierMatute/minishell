@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:09:40 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:50:56 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static int	ft_check_variable(char *variable)
 	int	equal_pos;
 
 	equal_pos = ft_strchr(variable, '=') - variable;
-	if (equal_pos == 0 || ft_check_variable_name(variable))
+	if (equal_pos == 0 || ft_check_variable_name(variable) || \
+		ft_isdigit(variable[0]))
 	{
 		ft_printf("❌ export: '%s': not a variable identifier\n", variable);
 		return (1);
@@ -45,6 +46,8 @@ static int	ft_update_variable(char *variable)
 	node = ft_getenv_node(variable);
 	if (!node)
 		return (1);
+	if (!contain(variable, '=') && contain(node->variable, '='))
+		return (0);
 	free(node->variable);
 	node->variable = ft_strdup(variable);
 	return (0);

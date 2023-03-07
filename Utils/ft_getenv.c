@@ -6,21 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:24:19 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/06 17:59:19 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:50:32 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-static size_t	ft_vlen(char *s)
-{
-	size_t	l;
-
-	l = 0;
-	while (s[l] && s[l] != '=')
-		l++;
-	return (l);
-}
 
 char	*ft_advance_to_equal(char *variable)
 {
@@ -49,19 +39,48 @@ char	*ft_getenv(char *variable)
 	return (NULL);
 }
 
+t_node	*ft_export_equal(char *variable, t_node *ptr)
+{
+	if (contain(ptr->variable, '=') && !ft_strncmp(variable, ptr->variable, \
+		ft_vlen(ptr->variable) + 1))
+		return (ptr);
+	if (!contain(ptr->variable, '=') && !ft_strncmp(variable, ptr->variable, \
+		ft_vlen(variable)) && ft_vlen(variable) == ft_strlen(ptr->variable))
+		return (ptr);
+	return (NULL);
+}
+
+t_node	*ft_export_no_equal(char *variable, t_node *ptr)
+{
+	if (contain(ptr->variable, '=') && !ft_strncmp(variable, ptr->variable, \
+		ft_vlen(ptr->variable)) && \
+		ft_strlen(variable) == ft_vlen(ptr->variable))
+		return (ptr);
+	if (!contain(ptr->variable, '=') && !ft_strncmp(variable, ptr->variable, \
+		ft_strlen(variable) + 1))
+		return (ptr);
+	return (NULL);
+}
+
 t_node	*ft_getenv_node(char *variable)
 {
 	t_node	*ptr;
+	t_node	*output;
 
+	output = NULL;
 	if (g_cp_env->peek)
 	{
 		ptr = g_cp_env->peek;
 		while (ptr)
 		{
-			if (!ft_strncmp(ptr->variable, variable, ft_vlen(ptr->variable)) && \
-				contain(ptr->variable, '='))
-				return (ptr);
-			ptr = ptr->next;
+			if (contain(variable, '='))
+				output = ft_export_equal(variable, ptr);
+			else
+				output = ft_export_no_equal(variable, ptr);
+			if (!output)
+				ptr = ptr->next;
+			else
+				return (output);
 		}
 	}
 	return (NULL);
