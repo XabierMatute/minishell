@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:52:46 by jperez            #+#    #+#             */
-/*   Updated: 2023/03/07 12:43:55 by jperez           ###   ########.fr       */
+/*   Updated: 2023/03/07 12:50:14 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,41 +55,22 @@ void	ft_pre_here(int	process, int *cp_stdin, int *lap, char *eof)
 
 	if (!process || process == NO_STARTED)
 	{
-		printf("----->PRIMERA BUELTA\n");
-		printf("Old cp_stdin: %d\n", *cp_stdin);
 		*cp_stdin = dup(STDIN_FILENO);
 
 		if (eof == NULL)
 			*lap = END;
 		else
 			*lap = START;
-		printf("New cp_stdin: %d\n", *cp_stdin);
 	}
 	else 
 	{
-		printf("----->BUELTA N\n");
-		printf("Old cp_stdin: %d\n", *cp_stdin);
 		close(STDIN_FILENO);
 		aux = *cp_stdin;
 		*cp_stdin = dup(*cp_stdin);//Aqui ns donde hay que cerrar algun fd, para q no se acumulen
-
-		printf("New cp_stdin: %d\n", *cp_stdin);
 		*cp_stdin = dup(*cp_stdin);
 		aux2 = *cp_stdin;
-		printf("NEW cp_stdin: %d\n", *cp_stdin);
 		dup2(STDIN_FILENO, *cp_stdin);
-
-		/*
-		if (*lap == MIDDLE)
-		{
-			*cp_stdin = dup(*cp_stdin);
-			printf("MIDDLE cp_stdin: %d\n", *cp_stdin);
-			close(aux2);
-		}
-		*/
-
 		close(aux);
-
 		if (eof == NULL)
 			*lap = END;
 		else
